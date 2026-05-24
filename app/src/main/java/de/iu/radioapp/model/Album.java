@@ -69,4 +69,19 @@ public class Album {
     public List<Song> getSongs() {
         return songs;
     }
+
+    /**
+     * This method provides a way to add a song to this album.
+     * If the List for the songs has not been instantiated yet, a new ArrayList will be created
+     *
+     * @param song that should be added to this album
+     * @see Song
+     */
+    public void addSongToAlbum(Song song){
+        if (this.songs == null){
+            this.songs = new ArrayList<>();
+        }
+
+        this.songs.add(song);
+    }
 }

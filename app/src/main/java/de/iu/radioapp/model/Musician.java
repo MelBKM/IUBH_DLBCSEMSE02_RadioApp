@@ -43,4 +43,19 @@ public class Musician {
     public List<Album> getAlbums() {
         return albums;
     }
+
+    /**
+     * This method provides a way to add an album to this musician.
+     * If the List for the albums has not been instantiated yet, a new ArrayList will be created
+     *
+     * @param album that should be added to this album
+     * @see Album
+     */
+    public void addAlbumToMusician(Album album){
+        if (this.albums == null){
+            this.albums = new ArrayList<>();
+        }
+
+        this.albums.add(album);
+    }
 }

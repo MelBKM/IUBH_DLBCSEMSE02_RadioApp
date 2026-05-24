@@ -1,0 +1,18 @@
+[
+  {
+    "name": "Daft Punk",
+    "albums": [
+      {
+        "title": "Random Access Memories",
+        "year": 2013,
+        "songs": [
+          {
+            "title": "Get Lucky",
+            "durationSeconds": 369,
+            "genre": "DISCO"
+          }
+        ]
+      }
+    ]
+  }
+]
