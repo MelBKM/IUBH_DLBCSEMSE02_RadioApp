@@ -6,5 +6,6 @@ public enum Genre {
     METAL,
     JAZZ,
     COUNTRY,
-    DISCO
+    DISCO,
+    RAP
 }

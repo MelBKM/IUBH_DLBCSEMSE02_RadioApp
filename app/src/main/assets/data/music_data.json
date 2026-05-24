@@ -1,15 +1,465 @@
 [
   {
-    "name": "Daft Punk",
+    "name": "Ed Sheeran",
     "albums": [
       {
-        "title": "Random Access Memories",
-        "year": 2013,
+        "title": "Divide",
+        "year": 2017,
         "songs": [
           {
-            "title": "Get Lucky",
+            "title": "Eraser",
+            "durationSeconds": 369,
+            "genre": "POP"
+          },
+          {
+            "title": "Castle on the Hill",
+            "durationSeconds": 369,
+            "genre": "POP"
+          },
+          {
+            "title": "Dive",
+            "durationSeconds": 369,
+            "genre": "POP"
+          },
+          {
+            "title": "Shape of You",
+            "durationSeconds": 369,
+            "genre": "POP"
+          },
+          {
+            "title": "Perfect",
+            "durationSeconds": 369,
+            "genre": "POP"
+          },
+          {
+            "title": "Galway Girl",
+            "durationSeconds": 369,
+            "genre": "RAP"
+          },
+          {
+            "title": "Happier",
+            "durationSeconds": 369,
+            "genre": "POP"
+          },
+          {
+            "title": "New Man",
+            "durationSeconds": 369,
+            "genre": "ROCK"
+          },
+          {
+            "title": "Hearts Don't Break Around Here",
+            "durationSeconds": 369,
+            "genre": "POP"
+          },
+          {
+            "title": "What Do I Know?",
+            "durationSeconds": 369,
+            "genre": "POP"
+          },
+          {
+            "title": "How Would You Feel (Paean)",
+            "durationSeconds": 369,
+            "genre": "POP"
+          },
+          {
+            "title": "Supermarket Flowers",
+            "durationSeconds": 369,
+            "genre": "POP"
+          },
+          {
+            "title": "Barcelona",
+            "durationSeconds": 369,
+            "genre": "POP"
+          },
+          {
+            "title": "Bibia Be Ye Ye",
             "durationSeconds": 369,
             "genre": "DISCO"
+          },
+          {
+            "title": "Nancy Mulligan",
+            "durationSeconds": 369,
+            "genre": "POP"
+          },
+          {
+            "title": "Save Myself",
+            "durationSeconds": 369,
+            "genre": "POP"
+          }
+        ]
+      },
+      {
+        "title": "Equals",
+        "year": 2021,
+        "songs": [
+          {
+            "title": "Tides",
+            "durationSeconds": 369,
+            "genre": "ROCK"
+          },
+          {
+            "title": "Shivers",
+            "durationSeconds": 369,
+            "genre": "POP"
+          },
+          {
+            "title": "First Times",
+            "durationSeconds": 369,
+            "genre": "POP"
+          },
+          {
+            "title": "Bad Habits",
+            "durationSeconds": 369,
+            "genre": "ROCK"
+          },
+          {
+            "title": "Overpass Graffiti",
+            "durationSeconds": 369,
+            "genre": "RAP"
+          },
+          {
+            "title": "The Jokes And The Queen",
+            "durationSeconds": 369,
+            "genre": "POP"
+          },
+          {
+            "title": "Leave Your Life",
+            "durationSeconds": 369,
+            "genre": "POP"
+          },
+          {
+            "title": "Collide",
+            "durationSeconds": 369,
+            "genre": "ROCK"
+          },
+          {
+            "title": "2step",
+            "durationSeconds": 369,
+            "genre": "RAP"
+          },
+          {
+            "title": "Stop The Rain",
+            "durationSeconds": 369,
+            "genre": "POP"
+          },
+          {
+            "title": "Love In Slow Motion",
+            "durationSeconds": 369,
+            "genre": "POP"
+          },
+          {
+            "title": "Visiting Hours",
+            "durationSeconds": 369,
+            "genre": "POP"
+          },
+          {
+            "title": "Sandman",
+            "durationSeconds": 369,
+            "genre": "POP"
+          },
+          {
+            "title": "Be Right Now",
+            "durationSeconds": 369,
+            "genre": "DISCO"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Taylor Swift",
+    "albums": [
+      {
+        "title": "Lover",
+        "year": 2019,
+        "songs": [
+          {
+            "title": "I Forgot That You Existed",
+            "durationSeconds": 369,
+            "genre": "POP"
+          },
+          {
+            "title": "Cruel Summer",
+            "durationSeconds": 369,
+            "genre": "POP"
+          },
+          {
+            "title": "Lover",
+            "durationSeconds": 369,
+            "genre": "POP"
+          },
+          {
+            "title": "The Man",
+            "durationSeconds": 369,
+            "genre": "POP"
+          },
+          {
+            "title": "The Archer",
+            "durationSeconds": 369,
+            "genre": "POP"
+          },
+          {
+            "title": "I Think He Knows",
+            "durationSeconds": 369,
+            "genre": "RAP"
+          },
+          {
+            "title": "Miss Americana & The Heartbreak Prince",
+            "durationSeconds": 369,
+            "genre": "POP"
+          },
+          {
+            "title": "Paper Rings",
+            "durationSeconds": 369,
+            "genre": "ROCK"
+          },
+          {
+            "title": "Cornelia Street",
+            "durationSeconds": 369,
+            "genre": "POP"
+          },
+          {
+            "title": "Death By A Thousand Cuts",
+            "durationSeconds": 369,
+            "genre": "POP"
+          },
+          {
+            "title": "London Boy",
+            "durationSeconds": 369,
+            "genre": "POP"
+          },
+          {
+            "title": "Soon You'll Get Better (feat. The Chicks)",
+            "durationSeconds": 369,
+            "genre": "POP"
+          },
+          {
+            "title": "False God",
+            "durationSeconds": 369,
+            "genre": "POP"
+          },
+          {
+            "title": "You Need To Calm Down",
+            "durationSeconds": 369,
+            "genre": "DISCO"
+          },
+          {
+            "title": "Afterglow",
+            "durationSeconds": 369,
+            "genre": "POP"
+          },
+          {
+            "title": "ME! (feat. Brendon Urie of Panic! At The Disco)",
+            "durationSeconds": 369,
+            "genre": "POP"
+          },
+          {
+            "title": "It's Nice To Have A Friend",
+            "durationSeconds": 369,
+            "genre": "POP"
+          },
+          {
+            "title": "Daylight",
+            "durationSeconds": 369,
+            "genre": "POP"
+          }
+        ]
+      },
+      {
+        "title": "The Life of a Showgirl",
+        "year": 2025,
+        "songs": [
+          {
+            "title": "The Fate of Ophelia",
+            "durationSeconds": 369,
+            "genre": "POP"
+          },
+          {
+            "title": "Elizabeth Taylor",
+            "durationSeconds": 369,
+            "genre": "POP"
+          },
+          {
+            "title": "Opalite",
+            "durationSeconds": 369,
+            "genre": "POP"
+          },
+          {
+            "title": "Father Figure",
+            "durationSeconds": 369,
+            "genre": "ROCK"
+          },
+          {
+            "title": "Eldest Daughter",
+            "durationSeconds": 369,
+            "genre": "RAP"
+          },
+          {
+            "title": "Ruin The Friendship",
+            "durationSeconds": 369,
+            "genre": "POP"
+          },
+          {
+            "title": "Actually Romantic",
+            "durationSeconds": 369,
+            "genre": "POP"
+          },
+          {
+            "title": "Wi$h Li$t",
+            "durationSeconds": 369,
+            "genre": "ROCK"
+          },
+          {
+            "title": "Wood",
+            "durationSeconds": 369,
+            "genre": "RAP"
+          },
+          {
+            "title": "CANCELLED!",
+            "durationSeconds": 369,
+            "genre": "POP"
+          },
+          {
+            "title": "Honey",
+            "durationSeconds": 369,
+            "genre": "POP"
+          },
+          {
+            "title": "The Life of a Showgirl (feat. Sabrina Carpenter)",
+            "durationSeconds": 369,
+            "genre": "POP"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Olivia Rodrigo",
+    "albums": [
+      {
+        "title": "SOUR",
+        "year": 2021,
+        "songs": [
+          {
+            "title": "brutal",
+            "durationSeconds": 143,
+            "genre": "ROCK"
+          },
+          {
+            "title": "traitor",
+            "durationSeconds": 229,
+            "genre": "POP"
+          },
+          {
+            "title": "drivers license",
+            "durationSeconds": 242,
+            "genre": "POP"
+          },
+          {
+            "title": "1 step forward,3 steps back",
+            "durationSeconds": 163,
+            "genre": "POP"
+          },
+          {
+            "title": "deja vu",
+            "durationSeconds": 215,
+            "genre": "POP"
+          },
+          {
+            "title": "good 4 u",
+            "durationSeconds": 178,
+            "genre": "ROCK"
+          },
+          {
+            "title": "enough for you",
+            "durationSeconds": 202,
+            "genre": "POP"
+          },
+          {
+            "title": "happier",
+            "durationSeconds": 175,
+            "genre": "POP"
+          },
+          {
+            "title": "jealousy, jealousy",
+            "durationSeconds": 173,
+            "genre": "POP"
+          },
+          {
+            "title": "favorite crime",
+            "durationSeconds": 152,
+            "genre": "POP"
+          },
+          {
+            "title": "hope ur ok",
+            "durationSeconds": 209,
+            "genre": "POP"
+          }
+        ]
+      },
+      {
+        "title": "GUTS",
+        "year": 2023,
+        "songs": [
+          {
+            "title": "all-american bitch",
+            "durationSeconds": 165,
+            "genre": "ROCK"
+          },
+          {
+            "title": "bad idea right?",
+            "durationSeconds": 184,
+            "genre": "ROCK"
+          },
+          {
+            "title": "vampire",
+            "durationSeconds": 219,
+            "genre": "POP"
+          },
+          {
+            "title": "lacy",
+            "durationSeconds": 177,
+            "genre": "ROCK"
+          },
+          {
+            "title": "ballad of a homeschooled girl",
+            "durationSeconds": 203,
+            "genre": "RAP"
+          },
+          {
+            "title": "making the bad",
+            "durationSeconds": 198,
+            "genre": "POP"
+          },
+          {
+            "title": "logical",
+            "durationSeconds": 231,
+            "genre": "POP"
+          },
+          {
+            "title": "get him back!",
+            "durationSeconds": 111,
+            "genre": "ROCK"
+          },
+          {
+            "title": "love is embarrassing",
+            "durationSeconds": 154,
+            "genre": "RAP"
+          },
+          {
+            "title": "the grudge",
+            "durationSeconds": 189,
+            "genre": "POP"
+          },
+          {
+            "title": "pretty isn't pretty",
+            "durationSeconds": 199,
+            "genre": "POP"
+          },
+          {
+            "title": "teenage dream",
+            "durationSeconds": 222,
+            "genre": "POP"
           }
         ]
       }
