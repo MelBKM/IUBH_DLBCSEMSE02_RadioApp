@@ -11,6 +11,13 @@ import androidx.core.view.WindowInsetsCompat;
 
 import de.iu.radioapp.data.AppRepository;
 
+
+import de.iu.radioapp.service.SongInfoService;
+import de.iu.radioapp.service.PlaylistService;
+import de.iu.radioapp.service.SongRequestService;
+import de.iu.radioapp.service.ModeratorRatingService;
+
+
 public class MainActivity extends AppCompatActivity {
 
     @Override
@@ -27,5 +34,15 @@ public class MainActivity extends AppCompatActivity {
         AppRepository repository = new AppRepository(this);
 
         Log.d("MainActivity", "Songs loaded: " + repository.getSongs().size());
+
+
+        SongInfoService songInfoService = new SongInfoService(repository);
+        PlaylistService playlistService = new PlaylistService(repository);
+        SongRequestService songRequestService = new SongRequestService();
+        ModeratorRatingService moderatorRatingService = new ModeratorRatingService();
+
+        Log.d("MainActivity", "Songs loaded: " + repository.getSongs().size());
+        Log.d("MainActivity", songInfoService.getCurrentSongInfoText());
+
     }
 }
