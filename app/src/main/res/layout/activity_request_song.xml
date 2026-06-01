@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".RequestSong"
+    android:exported="true">
+
+    <TextView
+        android:id="@+id/labelActivityTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="48dp"
+        android:text="@string/activity_request_song.activityTitle.label"
+        android:textSize="34sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/labelSongTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="36dp"
+        android:labelFor="@+id/labelSongTitle"
+        android:text="@string/activity_request_song.songTitle.label"
+        android:textSize="24sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/labelActivityTitle" />
+
+    <EditText
+        android:id="@+id/textInputSongTitle"
+        android:layout_width="333dp"
+        android:layout_height="38dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/text_field_boarder"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="@+id/labelSongTitle"
+        app:layout_constraintTop_toBottomOf="@+id/labelSongTitle" />
+
+    <TextView
+        android:id="@+id/labelSongAlbum"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:text="@string/activity_request_song.songAlbum.label"
+        android:textSize="24sp"
+        app:layout_constraintStart_toStartOf="@+id/labelSongTitle"
+        app:layout_constraintTop_toBottomOf="@+id/textInputSongTitle" />
+
+    <EditText
+        android:id="@+id/textInputSongAlbum"
+        android:layout_width="333dp"
+        android:layout_height="38dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/text_field_boarder"
+        app:layout_constraintStart_toStartOf="@+id/labelSongAlbum"
+        app:layout_constraintTop_toBottomOf="@+id/labelSongAlbum"
+        android:textSize="16sp"/>
+
+    <TextView
+        android:id="@+id/labelSongInterpreter"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:text="@string/activity_request_song.songInterpreter.label"
+        android:textSize="24sp"
+        app:layout_constraintStart_toStartOf="@+id/labelSongTitle"
+        app:layout_constraintTop_toBottomOf="@+id/textInputSongAlbum" />
+
+    <EditText
+        android:id="@+id/textInputSongInterpreter"
+        android:layout_width="333dp"
+        android:layout_height="38dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/text_field_boarder"
+        app:layout_constraintStart_toStartOf="@+id/labelSongInterpreter"
+        app:layout_constraintTop_toBottomOf="@+id/labelSongInterpreter" />
+
+    <TextView
+        android:id="@+id/labelSongAdditionalMessage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:text="Weitere Informationen"
+        android:textSize="24sp"
+        app:layout_constraintStart_toStartOf="@+id/labelSongTitle"
+        app:layout_constraintTop_toBottomOf="@+id/textInputSongInterpreter" />
+
+    <EditText
+        android:id="@+id/editTextAdditionalMessage"
+        android:layout_width="330dp"
+        android:layout_height="201dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/text_field_boarder"
+        android:ems="10"
+        android:gravity="start|top"
+        android:inputType="textMultiLine"
+        android:textSize="16sp"
+        app:backgroundTint="@null"
+        app:layout_constraintStart_toStartOf="@+id/labelSongAdditionalMessage"
+        app:layout_constraintTop_toBottomOf="@+id/labelSongAdditionalMessage" />
+
+    <Button
+        android:id="@+id/btnCancel"
+        android:layout_width="144dp"
+        android:layout_height="49dp"
+        android:layout_marginBottom="104dp"
+        android:background="@drawable/button_shape_cancel"
+        android:text="@string/activity_request_song.buttonCancel.label"
+        android:textSize="16sp"
+        app:backgroundTint="@null"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/editTextAdditionalMessage"
+        app:layout_constraintTop_toBottomOf="@+id/editTextAdditionalMessage"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <Button
+        android:id="@+id/btnConfirm"
+        android:layout_width="144dp"
+        android:layout_height="49dp"
+        android:background="@drawable/button_shape_confirm"
+        android:text="@string/activity_request_song.buttonConfirm.label"
+        android:textSize="16sp"
+        app:backgroundTint="@null"
+        app:layout_constraintBottom_toBottomOf="@+id/btnCancel"
+        app:layout_constraintEnd_toEndOf="@+id/editTextAdditionalMessage" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

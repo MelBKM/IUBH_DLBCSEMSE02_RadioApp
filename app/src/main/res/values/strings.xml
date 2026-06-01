@@ -1,3 +1,20 @@
 <resources>
     <string name="app_name">RadioApp</string>
+    <string name="activity_main.currentPlaylist.label">Playliste:</string>
+    <string name="activity_main.currentPlaylist.defaultValue">Name der Playliste</string>
+    <string name="activity_main.currentSongTitle.label">Titel:</string>
+    <string name="activity_main.currentSongTitle.defaultValue">Yellow Submarine</string>
+    <string name="activity_main.currentSongInterpreter.label">Interpreter:</string>
+    <string name="activity_main.currentSongInterpreter.defaultValue">The Beatles</string>
+    <string name="activity_main.currentSongAlbum.label">Album:</string>
+    <string name="activity_main.currentSongAlbum.defaultValue">Yellow Submarine</string>
+    <string name="activity_main.currentSongReleaseDate.label">Veröffentlicht:</string>
+    <string name="activity_main.currentSongReleaseDate.defaultValue">1966</string>
+
+    <string name="activity_request_song.activityTitle.label">Einen Song wünschen</string>
+    <string name="activity_request_song.songTitle.label">Titel <font color='#FF0000'>*</font></string>
+    <string name="activity_request_song.songAlbum.label">Album <font color='#FF0000'>*</font></string>
+    <string name="activity_request_song.songInterpreter.label">Interpreter <font color='#FF0000'>*</font></string>
+    <string name="activity_request_song.buttonConfirm.label">Senden</string>
+    <string name="activity_request_song.buttonCancel.label">Abbrechen</string>
 </resources>
