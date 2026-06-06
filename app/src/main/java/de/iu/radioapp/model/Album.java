@@ -16,19 +16,23 @@ public class Album {
     private Musician musician;
     private List<Song> songs;
 
+    private int coverImageId;
+
     /**
      * Creates a new album with the given name, releaseYear and musician
      *
      * @param name of the musician to be created
      * @param releaseYear of the album to be created
      * @param musician associated with this album
+     * @param coverImageId associated with this album
      * @see Musician
      */
-    public Album(String name, int releaseYear, Musician musician) {
+    public Album(String name, int releaseYear, Musician musician, int coverImageId) {
         this.name = name;
         this.releaseYear = releaseYear;
         this.musician = musician;
         this.songs = new ArrayList<>();
+        this.coverImageId = coverImageId;
     }
 
     /**
@@ -68,6 +72,15 @@ public class Album {
      */
     public List<Song> getSongs() {
         return songs;
+    }
+
+    /**
+     * This method provides information about the resource if of the coverImage
+     *
+     * @return int containing the resource id
+     */
+    public int getCoverImageId() {
+        return coverImageId;
     }
 
     /**

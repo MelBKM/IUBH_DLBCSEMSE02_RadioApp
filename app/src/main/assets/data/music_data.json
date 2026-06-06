@@ -5,6 +5,7 @@
       {
         "title": "Divide",
         "year": 2017,
+        "cover": "artistic",
         "songs": [
           {
             "title": "Eraser",
@@ -91,6 +92,7 @@
       {
         "title": "Equals",
         "year": 2021,
+        "cover": "colorful",
         "songs": [
           {
             "title": "Tides",
@@ -172,6 +174,7 @@
       {
         "title": "Lover",
         "year": 2019,
+        "cover": "drowning",
         "songs": [
           {
             "title": "I Forgot That You Existed",
@@ -268,6 +271,7 @@
       {
         "title": "The Life of a Showgirl",
         "year": 2025,
+        "cover": "tree",
         "songs": [
           {
             "title": "The Fate of Ophelia",
@@ -339,6 +343,7 @@
       {
         "title": "SOUR",
         "year": 2021,
+        "cover": "tree",
         "songs": [
           {
             "title": "brutal",
@@ -400,6 +405,7 @@
       {
         "title": "GUTS",
         "year": 2023,
+        "cover": "drowning",
         "songs": [
           {
             "title": "all-american bitch",

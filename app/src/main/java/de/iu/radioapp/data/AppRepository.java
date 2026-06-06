@@ -57,9 +57,10 @@ public class AppRepository {
                     JSONObject albumObject = albumArray.getJSONObject(j);
 
                     String albumTitle = albumObject.getString("title");
+                    String albumCover = albumObject.getString("cover");
                     int albumYear = albumObject.getInt("year");
 
-                    Album album = new Album(albumTitle, albumYear, musician);
+                    Album album = new Album(albumTitle, albumYear, musician, context.getResources().getIdentifier(albumCover,"drawable",context.getPackageName()));
                     albums.add(album);
                     musician.addAlbumToMusician(album);
 
