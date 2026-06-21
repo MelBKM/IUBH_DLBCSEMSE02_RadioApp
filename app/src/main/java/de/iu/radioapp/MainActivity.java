@@ -17,6 +17,15 @@ import de.iu.radioapp.service.PlaylistService;
 import de.iu.radioapp.service.SongRequestService;
 import de.iu.radioapp.service.ModeratorRatingService;
 
+import android.widget.RatingBar;
+import android.widget.TextView;
+import android.widget.Toast;
+import android.widget.Button;
+import android.content.Intent;
+
+
+import de.iu.radioapp.model.Song;
+
 
 public class MainActivity extends AppCompatActivity {
 
@@ -31,18 +40,111 @@ public class MainActivity extends AppCompatActivity {
             return insets;
         });
 
+        // 1. Repository
         AppRepository repository = new AppRepository(this);
 
-        Log.d("MainActivity", "Songs loaded: " + repository.getSongs().size());
+        // 2. Services
+        SongInfoService songInfoService =
+                new SongInfoService(repository);
+
+        PlaylistService playlistService =
+                new PlaylistService(repository);
+
+        SongRequestService songRequestService =
+                new SongRequestService();
+
+        ModeratorRatingService moderatorRatingService =
+                new ModeratorRatingService();
+
+        // 3. Songinformationen anzeigen
+        Song currentSong = songInfoService.getCurrentSong();
+
+        if (currentSong != null) {
+
+            TextView playlistName =
+                    findViewById(R.id.textViewCurrentPlaylist);
+
+            TextView songTitle =
+                    findViewById(R.id.textViewCurrentSongTitle);
+
+            TextView interpreter =
+                    findViewById(R.id.textViewCurrentSongInterpreter);
+
+            TextView album =
+                    findViewById(R.id.textViewCurrentSongAlbum);
+
+            TextView releaseDate =
+                    findViewById(R.id.textViewCurrentSongReleaseDate);
+
+            playlistName.setText("Aktuelle Playlist");
+            songTitle.setText(currentSong.getName());
+            interpreter.setText(
+                    currentSong.getAlbum().getMusician().getName()
+            );
+            album.setText(currentSong.getAlbum().getName());
+            releaseDate.setText(
+                    String.valueOf(
+                            currentSong.getAlbum().getReleaseYear()
+                    )
+            );
+        }
+
+        // 4. Playlist bewerten
+        RatingBar ratingBarPlaylist =
+                findViewById(R.id.ratingBarPlaylist);
+
+        ratingBarPlaylist.setOnRatingBarChangeListener(
+                (ratingBar, rating, fromUser) -> {
+
+                    if (fromUser) {
+
+                        boolean success =
+                                playlistService.ratePlaylist(
+                                        (int) rating
+                                );
+
+                        if (success) {
+                            Toast.makeText(
+                                    this,
+                                    "Playlist-Bewertung gespeichert.",
+                                    Toast.LENGTH_SHORT
+                            ).show();
+                        }
+                    }
+                });
+
+        // 5. HIER die Buttons
+        Button songRequestButton =
+                findViewById(R.id.buttonSongRequest);
+
+        //   Demo „Song wünschen“, leitet weiter zu RequestSong
+        songRequestButton.setOnClickListener(v -> {
+            Intent intent = new Intent(MainActivity.this, RequestSong.class);
+            startActivity(intent);
+        });
 
 
-        SongInfoService songInfoService = new SongInfoService(repository);
-        PlaylistService playlistService = new PlaylistService(repository);
-        SongRequestService songRequestService = new SongRequestService();
-        ModeratorRatingService moderatorRatingService = new ModeratorRatingService();
+        Button moderatorButton =
+                findViewById(R.id.buttonModeratorRating);
 
-        Log.d("MainActivity", "Songs loaded: " + repository.getSongs().size());
-        Log.d("MainActivity", songInfoService.getCurrentSongInfoText());
 
+        // Moderator bewerten
+        moderatorButton.setOnClickListener(v -> {
+
+            boolean success =
+                    moderatorRatingService.rateModerator(
+                            "Peter Muster",
+                            5,
+                            "Mir gefallen deine Witze."
+                    );
+
+            if (success) {
+                Toast.makeText(
+                        this,
+                        "Moderator wurde bewertet.",
+                        Toast.LENGTH_SHORT
+                ).show();
+            }
+        });
     }
-}
+    }
