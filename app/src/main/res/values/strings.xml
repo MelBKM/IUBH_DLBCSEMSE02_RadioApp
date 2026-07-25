@@ -17,4 +17,13 @@
     <string name="activity_request_song.songInterpreter.label">Interpreter <font color='#FF0000'>*</font></string>
     <string name="activity_request_song.buttonConfirm.label">Senden</string>
     <string name="activity_request_song.buttonCancel.label">Abbrechen</string>
+
+    <string name="moderator_rating.fragmentTitle.label">Moderator bewerten</string>
+    <string name="moderator_rating.moderatorName.label">Moderator:</string>
+    <string name="moderator_rating.moderatorName.defaultValue">Peter Muster</string>
+    <string name="moderator_rating.moderatorMessage.label">Nachricht</string>
+    <string name="moderator_rating.buttonConfirm.label">Senden</string>
+    <string name="moderator_rating.buttonCancel.label">Abbrechen</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

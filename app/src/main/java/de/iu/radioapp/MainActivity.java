@@ -8,29 +8,33 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
-import de.iu.radioapp.data.AppRepository;
+import android.widget.Button;
 
+import androidx.lifecycle.ViewModelProvider;
+
+import de.iu.radioapp.data.AppRepository;
 
 import de.iu.radioapp.service.SongInfoService;
 import de.iu.radioapp.service.PlaylistService;
 import de.iu.radioapp.service.SongRequestService;
 import de.iu.radioapp.service.ModeratorRatingService;
 
-import android.widget.RatingBar;
-import android.widget.Toast;
-import android.widget.Button;
-import android.content.Intent;
-import androidx.lifecycle.ViewModelProvider;
-
 import de.iu.radioapp.fragments.PlaylistScreen;
+import de.iu.radioapp.fragments.RequestSongScreen;
+import de.iu.radioapp.fragments.ModeratorRatingScreen;
+
 
 public class MainActivity extends AppCompatActivity {
-    private ServiceViewModel serviceViewModel;
+
+    private Button buttonPlaylist;
+    private Button buttonRequestSong;
+    private Button buttonModeratorRating;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setupMainActivity();
+        setupNavigation();
         connectServices();
         loadPlaylistScreen();
     }
@@ -46,7 +50,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void connectServices() {
-        serviceViewModel = new ViewModelProvider(this).get(ServiceViewModel.class);
+        ServiceViewModel serviceViewModel = new ViewModelProvider(this).get(ServiceViewModel.class);
         AppRepository appRepository = new AppRepository(this);
         serviceViewModel.setSongInfoService(new SongInfoService(appRepository));
         serviceViewModel.setPlaylistService(new PlaylistService(appRepository));
@@ -54,49 +58,53 @@ public class MainActivity extends AppCompatActivity {
         serviceViewModel.setModeratorRatingService(new ModeratorRatingService());
     }
 
+    private void setupNavigation() {
+        buttonPlaylist = findViewById(R.id.buttonPlaylist);
+        buttonPlaylist.setOnClickListener(v -> {
+            loadPlaylistScreen();
+        });
+
+        buttonRequestSong = findViewById(R.id.buttonSongRequest);
+        buttonRequestSong.setOnClickListener(v -> {
+            loadRequestSongScreen();
+        });
+
+        buttonModeratorRating = findViewById(R.id.buttonModeratorRating);
+        buttonModeratorRating.setOnClickListener(v -> {
+            loadModeratorRatingScreen();
+        });
+
+    }
+
     private void loadPlaylistScreen() {
         getSupportFragmentManager().beginTransaction()
                 .setReorderingAllowed(true)
-                .add(R.id.fragmentContainerView, PlaylistScreen.class, null)
+                .replace(R.id.fragmentContainerView, PlaylistScreen.class, null)
+                .commit();
+        buttonPlaylist.setClickable(false);
+        buttonRequestSong.setClickable(true);
+        buttonModeratorRating.setClickable(true);
+    }
+
+    private void loadRequestSongScreen() {
+        getSupportFragmentManager().beginTransaction()
+                .setReorderingAllowed(true)
+                .replace(R.id.fragmentContainerView, RequestSongScreen.class, null)
+                .commit();
+        buttonPlaylist.setClickable(true);
+        buttonRequestSong.setClickable(false);
+        buttonModeratorRating.setClickable(true);
+    }
+
+    private void loadModeratorRatingScreen() {
+        getSupportFragmentManager().beginTransaction()
+                .setReorderingAllowed(true)
+                .replace(R.id.fragmentContainerView, ModeratorRatingScreen.class, null)
                 .commit();
 
+        buttonPlaylist.setClickable(true);
+        buttonRequestSong.setClickable(true);
+        buttonModeratorRating.setClickable(false);
     }
 
-
-
-    private void setupNavigation() {
-        // 5. HIER die Buttons
-        Button songRequestButton =
-                findViewById(R.id.buttonSongRequest);
-
-        //   Demo „Song wünschen“, leitet weiter zu RequestSong
-        songRequestButton.setOnClickListener(v -> {
-            Intent intent = new Intent(MainActivity.this, RequestSong.class);
-            startActivity(intent);
-        });
-
-
-        Button moderatorButton =
-                findViewById(R.id.buttonModeratorRating);
-
-
-        // Moderator bewerten
-        moderatorButton.setOnClickListener(v -> {
-
-            boolean success =
-                    serviceViewModel.getModeratorRatingService().rateModerator(
-                            "Peter Muster",
-                            5,
-                            "Mir gefallen deine Witze."
-                    );
-
-            if (success) {
-                Toast.makeText(
-                        this,
-                        "Moderator wurde bewertet.",
-                        Toast.LENGTH_SHORT
-                ).show();
-            }
-        });
-    }
 }

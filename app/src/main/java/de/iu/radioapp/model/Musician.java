@@ -11,7 +11,7 @@ import java.util.List;
  */
 public class Musician {
 
-    private String name;
+    private final String name;
     private List<Album> albums;
 
     /**

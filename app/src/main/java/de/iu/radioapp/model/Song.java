@@ -7,10 +7,10 @@ package de.iu.radioapp.model;
  * @author Julian Engler
  */
 public class Song {
-    private String name;
-    private int duration;
-    private Genre genre;
-    private Album album;
+    private final String name;
+    private final int duration;
+    private final Genre genre;
+    private final Album album;
 
     /**
      * Creates a new musician with the given name

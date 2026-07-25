@@ -5,7 +5,6 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".RequestSong"
     android:exported="true">
 
     <TextView
@@ -39,6 +38,7 @@
         android:layout_marginTop="10dp"
         android:background="@drawable/text_field_boarder"
         android:textSize="16sp"
+        android:inputType="text"
         app:layout_constraintStart_toStartOf="@+id/labelSongTitle"
         app:layout_constraintTop_toBottomOf="@+id/labelSongTitle" />
 
@@ -58,6 +58,7 @@
         android:layout_height="38dp"
         android:layout_marginTop="10dp"
         android:background="@drawable/text_field_boarder"
+        android:inputType="text"
         app:layout_constraintStart_toStartOf="@+id/labelSongAlbum"
         app:layout_constraintTop_toBottomOf="@+id/labelSongAlbum"
         android:textSize="16sp"/>
@@ -78,6 +79,7 @@
         android:layout_height="38dp"
         android:layout_marginTop="10dp"
         android:background="@drawable/text_field_boarder"
+        android:inputType="text"
         app:layout_constraintStart_toStartOf="@+id/labelSongInterpreter"
         app:layout_constraintTop_toBottomOf="@+id/labelSongInterpreter" />
 
@@ -109,6 +111,7 @@
         android:id="@+id/btnCancel"
         android:layout_width="144dp"
         android:layout_height="49dp"
+        android:layout_marginTop="28dp"
         android:layout_marginBottom="104dp"
         android:background="@drawable/button_shape_cancel"
         android:text="@string/activity_request_song.buttonCancel.label"

@@ -11,12 +11,12 @@ import java.util.List;
  */
 public class Album {
 
-    private String name;
-    private int releaseYear;
-    private Musician musician;
+    private final String name;
+    private final int releaseYear;
+    private final Musician musician;
     private List<Song> songs;
 
-    private int coverImageId;
+    private final int coverImageId;
 
     /**
      * Creates a new album with the given name, releaseYear and musician
