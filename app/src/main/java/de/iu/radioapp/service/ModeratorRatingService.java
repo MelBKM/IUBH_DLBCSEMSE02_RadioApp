@@ -5,6 +5,9 @@ package de.iu.radioapp.service;
 
 public class ModeratorRatingService {
 
+    public String getCurrentModerator() {
+        return "Peter Pan"; // TODO: Needs model and service
+    }
     public boolean rateModerator(String moderatorName, int rating, String message) {
         if (isEmpty(moderatorName)) {
             return false;
