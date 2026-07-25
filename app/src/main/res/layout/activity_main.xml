@@ -10,159 +10,33 @@
     tools:layout_editor_absoluteY="0dp">
 
 
-    <LinearLayout
-        android:layout_width="307dp"
-        android:layout_height="27dp"
-        android:layout_marginBottom="10dp"
-        android:orientation="horizontal"
-        app:layout_constraintBottom_toTopOf="@+id/ratingBarPlaylist"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent">
-
-        <TextView
-            android:id="@+id/labelPlaylist"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="@string/activity_main.currentPlaylist.label"
-            android:textAlignment="textStart"
-            android:textAppearance="@style/TextAppearance.AppCompat.Large"
-            android:textSize="20sp"
-            android:textStyle="bold" />
-
-        <TextView
-            android:id="@+id/textViewCurrentPlaylist"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="10"
-            android:text="@string/activity_main.currentPlaylist.defaultValue"
-            android:textAlignment="textStart"
-            android:textSize="20sp"
-            android:typeface="normal" />
-    </LinearLayout>
-
-    <RatingBar
-        android:id="@+id/ratingBarPlaylist"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="10dp"
-        android:max="5"
-        android:numStars="5"
-        app:layout_constraintBottom_toTopOf="@+id/tableLayout"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
-
     <Button
         android:id="@+id/buttonSongRequest"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Song wünschen"
-        app:layout_constraintTop_toBottomOf="@id/tableLayout"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"/>
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.003"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <Button
         android:id="@+id/buttonModeratorRating"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Moderator bewerten"
-        app:layout_constraintTop_toBottomOf="@id/buttonSongRequest"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"/>
-
-
-    <TableLayout
-        android:id="@+id/tableLayout"
-        android:layout_width="333dp"
-        android:layout_height="77dp"
-        android:layout_marginBottom="10dp"
-        app:layout_constraintBottom_toTopOf="@+id/imageViewCurrentSongAlbumCover"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent">
+        app:layout_constraintHorizontal_bias="0.207"
+        app:layout_constraintStart_toEndOf="@+id/buttonSongRequest"
+        app:layout_constraintTop_toTopOf="@+id/buttonSongRequest" />
 
-        <TableRow
-            android:layout_width="348dp"
-            android:layout_height="match_parent">
-
-            <TextView
-                android:id="@+id/labelTitle"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/activity_main.currentSongTitle.label"
-                android:textStyle="bold" />
-
-            <TextView
-                android:id="@+id/textViewCurrentSongTitle"
-                android:layout_width="241dp"
-                android:layout_height="match_parent"
-                android:text="@string/activity_main.currentSongTitle.defaultValue" />
-        </TableRow>
-
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
-
-            <TextView
-                android:id="@+id/labelInterpreter"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/activity_main.currentSongInterpreter.label"
-                android:textStyle="bold" />
-
-            <TextView
-                android:id="@+id/textViewCurrentSongInterpreter"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/activity_main.currentSongInterpreter.defaultValue" />
-        </TableRow>
-
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
-
-            <TextView
-                android:id="@+id/labelAlbum"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/activity_main.currentSongAlbum.label"
-                android:textStyle="bold" />
-
-            <TextView
-                android:id="@+id/textViewCurrentSongAlbum"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/activity_main.currentSongAlbum.defaultValue" />
-        </TableRow>
-
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
-
-            <TextView
-                android:id="@+id/labelReleaseDate"
-                android:layout_width="106dp"
-                android:layout_height="match_parent"
-                android:text="@string/activity_main.currentSongReleaseDate.label"
-                android:textStyle="bold" />
-
-            <TextView
-                android:id="@+id/textViewCurrentSongReleaseDate"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/activity_main.currentSongReleaseDate.defaultValue" />
-        </TableRow>
-    </TableLayout>
-
-    <ImageView
-        android:id="@+id/imageViewCurrentSongAlbumCover"
-        android:layout_width="409dp"
-        android:layout_height="479dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/fragmentContainerView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toTopOf="@+id/buttonSongRequest"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:srcCompat="@tools:sample/backgrounds/scenic" />
+        app:layout_constraintStart_toStartOf="parent" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

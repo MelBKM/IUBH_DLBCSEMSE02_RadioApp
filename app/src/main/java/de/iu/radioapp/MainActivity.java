@@ -1,7 +1,6 @@
 package de.iu.radioapp;
 
 import android.os.Bundle;
-import android.util.Log;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -18,20 +17,25 @@ import de.iu.radioapp.service.SongRequestService;
 import de.iu.radioapp.service.ModeratorRatingService;
 
 import android.widget.RatingBar;
-import android.widget.TextView;
 import android.widget.Toast;
 import android.widget.Button;
 import android.content.Intent;
+import androidx.lifecycle.ViewModelProvider;
 
-
-import de.iu.radioapp.model.Song;
-
+import de.iu.radioapp.fragments.PlaylistScreen;
 
 public class MainActivity extends AppCompatActivity {
+    private ServiceViewModel serviceViewModel;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setupMainActivity();
+        connectServices();
+        loadPlaylistScreen();
+    }
+
+    private void setupMainActivity() {
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_main);
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
@@ -39,80 +43,28 @@ public class MainActivity extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
+    }
 
-        // 1. Repository
-        AppRepository repository = new AppRepository(this);
+    private void connectServices() {
+        serviceViewModel = new ViewModelProvider(this).get(ServiceViewModel.class);
+        AppRepository appRepository = new AppRepository(this);
+        serviceViewModel.setSongInfoService(new SongInfoService(appRepository));
+        serviceViewModel.setPlaylistService(new PlaylistService(appRepository));
+        serviceViewModel.setSongRequestService(new SongRequestService());
+        serviceViewModel.setModeratorRatingService(new ModeratorRatingService());
+    }
 
-        // 2. Services
-        SongInfoService songInfoService =
-                new SongInfoService(repository);
+    private void loadPlaylistScreen() {
+        getSupportFragmentManager().beginTransaction()
+                .setReorderingAllowed(true)
+                .add(R.id.fragmentContainerView, PlaylistScreen.class, null)
+                .commit();
 
-        PlaylistService playlistService =
-                new PlaylistService(repository);
+    }
 
-        SongRequestService songRequestService =
-                new SongRequestService();
 
-        ModeratorRatingService moderatorRatingService =
-                new ModeratorRatingService();
 
-        // 3. Songinformationen anzeigen
-        Song currentSong = songInfoService.getCurrentSong();
-
-        if (currentSong != null) {
-
-            TextView playlistName =
-                    findViewById(R.id.textViewCurrentPlaylist);
-
-            TextView songTitle =
-                    findViewById(R.id.textViewCurrentSongTitle);
-
-            TextView interpreter =
-                    findViewById(R.id.textViewCurrentSongInterpreter);
-
-            TextView album =
-                    findViewById(R.id.textViewCurrentSongAlbum);
-
-            TextView releaseDate =
-                    findViewById(R.id.textViewCurrentSongReleaseDate);
-
-            playlistName.setText("Aktuelle Playlist");
-            songTitle.setText(currentSong.getName());
-            interpreter.setText(
-                    currentSong.getAlbum().getMusician().getName()
-            );
-            album.setText(currentSong.getAlbum().getName());
-            releaseDate.setText(
-                    String.valueOf(
-                            currentSong.getAlbum().getReleaseYear()
-                    )
-            );
-        }
-
-        // 4. Playlist bewerten
-        RatingBar ratingBarPlaylist =
-                findViewById(R.id.ratingBarPlaylist);
-
-        ratingBarPlaylist.setOnRatingBarChangeListener(
-                (ratingBar, rating, fromUser) -> {
-
-                    if (fromUser) {
-
-                        boolean success =
-                                playlistService.ratePlaylist(
-                                        (int) rating
-                                );
-
-                        if (success) {
-                            Toast.makeText(
-                                    this,
-                                    "Playlist-Bewertung gespeichert.",
-                                    Toast.LENGTH_SHORT
-                            ).show();
-                        }
-                    }
-                });
-
+    private void setupNavigation() {
         // 5. HIER die Buttons
         Button songRequestButton =
                 findViewById(R.id.buttonSongRequest);
@@ -132,7 +84,7 @@ public class MainActivity extends AppCompatActivity {
         moderatorButton.setOnClickListener(v -> {
 
             boolean success =
-                    moderatorRatingService.rateModerator(
+                    serviceViewModel.getModeratorRatingService().rateModerator(
                             "Peter Muster",
                             5,
                             "Mir gefallen deine Witze."
@@ -147,4 +99,4 @@ public class MainActivity extends AppCompatActivity {
             }
         });
     }
-    }
+}
