@@ -111,30 +111,25 @@
         android:id="@+id/btnCancel"
         android:layout_width="144dp"
         android:layout_height="49dp"
-        android:layout_marginStart="4dp"
+        android:layout_marginTop="36dp"
         android:background="@drawable/button_shape_cancel"
-        android:text="@string/activity_request_song.buttonCancel.label"
+        android:text="@string/moderator_rating.buttonCancel.label"
         android:textSize="16sp"
         app:backgroundTint="@null"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="@+id/editTextAdditionalMessage"
-        app:layout_constraintTop_toBottomOf="@+id/editTextAdditionalMessage"
-        app:layout_constraintVertical_bias="0.575" />
+        app:layout_constraintTop_toBottomOf="@+id/editTextAdditionalMessage" />
 
     <Button
         android:id="@+id/btnConfirm"
         android:layout_width="144dp"
         android:layout_height="49dp"
         android:background="@drawable/button_shape_confirm"
-        android:text="@string/activity_request_song.buttonConfirm.label"
+        android:text="@string/moderator_rating.buttonConfirm.label"
         android:textSize="16sp"
         app:backgroundTint="@null"
         app:layout_constraintBottom_toBottomOf="@+id/btnCancel"
         app:layout_constraintEnd_toEndOf="@+id/editTextAdditionalMessage"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toEndOf="@+id/btnCancel"
-        app:layout_constraintTop_toTopOf="@+id/btnCancel"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintTop_toTopOf="@+id/btnCancel" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
