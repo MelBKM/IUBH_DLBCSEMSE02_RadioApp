@@ -61,6 +61,7 @@ public class ModeratorRatingScreen extends Fragment {
         setupTextViewCurrentModerator();
         setupRatingBar();
         setupTextEditAdditionalMessage();
+        clean_screen();
     }
 
     private void setupButtonConfirm() {
@@ -100,8 +101,7 @@ public class ModeratorRatingScreen extends Fragment {
     }
 
     private void validate() {
-        // TODO: Change button color
-        buttonConfirm.setClickable(ratingBarModerator.getRating() > 0);
+        buttonConfirm.setEnabled(ratingBarModerator.getRating() > 0);
     }
 
     private void clean_screen() {

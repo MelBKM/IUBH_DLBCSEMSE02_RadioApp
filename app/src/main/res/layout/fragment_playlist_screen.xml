@@ -4,146 +4,206 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".MainActivity"
-    tools:layout_editor_absoluteX="0dp"
-    tools:layout_editor_absoluteY="0dp">
+    android:layout_height="match_parent">
 
-
-    <LinearLayout
-        android:layout_width="307dp"
-        android:layout_height="27dp"
-        android:layout_marginBottom="10dp"
-        android:orientation="horizontal"
-        app:layout_constraintBottom_toTopOf="@+id/ratingBarPlaylist"
+    <View
+        android:id="@+id/spacerTop"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="32dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent">
+        app:layout_constraintHeight_percent="0.03"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
-        <TextView
-            android:id="@+id/labelPlaylist"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="@string/activity_main.currentPlaylist.label"
-            android:textAlignment="textStart"
-            android:textAppearance="@style/TextAppearance.AppCompat.Large"
-            android:textSize="20sp"
-            android:textStyle="bold" />
+    <TextView
+        android:id="@+id/labelPlaylist"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/activity_main.currentPlaylist.label"
+        android:textSize="34sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/spacerTop" />
 
-        <TextView
-            android:id="@+id/textViewCurrentPlaylist"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="10"
-            android:text="@string/activity_main.currentPlaylist.defaultValue"
-            android:textAlignment="textStart"
-            android:textSize="20sp"
-            android:typeface="normal" />
-    </LinearLayout>
+    <TextView
+        android:id="@+id/textViewCurrentPlaylist"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/activity_main.currentPlaylist.defaultValue"
+        android:textSize="34sp"
+        android:textAlignment="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/labelPlaylist"
+        app:layout_constraintWidth_percent="1" />
+
+    <View
+        android:id="@+id/spacer1"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintHeight_percent="0.02"
+        app:layout_constraintTop_toBottomOf="@+id/textViewCurrentPlaylist"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
 
     <RatingBar
         android:id="@+id/ratingBarPlaylist"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="10dp"
         android:max="5"
         android:numStars="5"
-        app:layout_constraintBottom_toTopOf="@+id/tableLayout"
+        app:layout_constraintTop_toBottomOf="@+id/spacer1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <View
+        android:id="@+id/spacer2"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintHeight_percent="0.02"
+        app:layout_constraintTop_toBottomOf="@+id/ratingBarPlaylist"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <TextView
+        android:id="@+id/labelTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/activity_main.currentSongTitle.label"
+        android:textStyle="bold"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="@+id/ratingBarPlaylist"
+        app:layout_constraintTop_toBottomOf="@+id/spacer2" />
+
+    <TextView
+        android:id="@+id/textViewCurrentSongTitle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/activity_main.currentSongTitle.defaultValue"
+        android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/labelReleaseDate"
+        app:layout_constraintTop_toTopOf="@+id/labelTitle"
+        app:layout_constraintWidth_percent="0.48" />
 
-    <TableLayout
-        android:id="@+id/tableLayout"
-        android:layout_width="333dp"
-        android:layout_height="77dp"
-        android:layout_marginBottom="10dp"
-        app:layout_constraintBottom_toTopOf="@+id/imageViewCurrentSongAlbumCover"
+    <View
+        android:id="@+id/spacer3"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:textSize="18sp"
+        app:layout_constraintHeight_percent="0.01"
+        app:layout_constraintTop_toBottomOf="@+id/textViewCurrentSongTitle"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <TextView
+        android:id="@+id/labelInterpreter"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="18sp"
+        android:text="@string/activity_main.currentSongInterpreter.label"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/labelTitle"
+        app:layout_constraintTop_toBottomOf="@+id/spacer3" />
+
+    <TextView
+        android:id="@+id/textViewCurrentSongInterpreter"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:textSize="18sp"
+        android:text="@string/activity_main.currentSongInterpreter.defaultValue"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent">
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/textViewCurrentSongTitle"
+        app:layout_constraintTop_toTopOf="@+id/labelInterpreter"
+        app:layout_constraintWidth_percent="0.5" />
 
-        <TableRow
-            android:layout_width="348dp"
-            android:layout_height="match_parent">
+    <View
+        android:id="@+id/spacer4"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:textSize="18sp"
+        app:layout_constraintHeight_percent="0.01"
+        app:layout_constraintTop_toBottomOf="@+id/textViewCurrentSongInterpreter"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
 
-            <TextView
-                android:id="@+id/labelTitle"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/activity_main.currentSongTitle.label"
-                android:textStyle="bold" />
+    <TextView
+        android:id="@+id/labelAlbum"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="18sp"
+        android:text="@string/activity_main.currentSongAlbum.label"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/labelInterpreter"
+        app:layout_constraintTop_toBottomOf="@+id/spacer4" />
 
-            <TextView
-                android:id="@+id/textViewCurrentSongTitle"
-                android:layout_width="241dp"
-                android:layout_height="match_parent"
-                android:text="@string/activity_main.currentSongTitle.defaultValue" />
-        </TableRow>
+    <TextView
+        android:id="@+id/textViewCurrentSongAlbum"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/activity_main.currentSongAlbum.defaultValue"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/textViewCurrentSongTitle"
+        app:layout_constraintTop_toTopOf="@+id/labelAlbum"
+        app:layout_constraintWidth_percent="0.5" />
 
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
+    <View
+        android:id="@+id/spacer5"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintHeight_percent="0.01"
+        app:layout_constraintTop_toBottomOf="@+id/textViewCurrentSongAlbum"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
 
-            <TextView
-                android:id="@+id/labelInterpreter"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/activity_main.currentSongInterpreter.label"
-                android:textStyle="bold" />
+    <TextView
+        android:id="@+id/labelReleaseDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="18sp"
+        android:text="@string/activity_main.currentSongReleaseDate.label"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/labelAlbum"
+        app:layout_constraintTop_toBottomOf="@+id/spacer5" />
 
-            <TextView
-                android:id="@+id/textViewCurrentSongInterpreter"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/activity_main.currentSongInterpreter.defaultValue" />
-        </TableRow>
+    <TextView
+        android:id="@+id/textViewCurrentSongReleaseDate"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/activity_main.currentSongReleaseDate.defaultValue"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/textViewCurrentSongTitle"
+        app:layout_constraintTop_toTopOf="@+id/labelReleaseDate"
+        app:layout_constraintWidth_percent="0.4" />
 
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
-
-            <TextView
-                android:id="@+id/labelAlbum"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/activity_main.currentSongAlbum.label"
-                android:textStyle="bold" />
-
-            <TextView
-                android:id="@+id/textViewCurrentSongAlbum"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/activity_main.currentSongAlbum.defaultValue" />
-        </TableRow>
-
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
-
-            <TextView
-                android:id="@+id/labelReleaseDate"
-                android:layout_width="106dp"
-                android:layout_height="match_parent"
-                android:text="@string/activity_main.currentSongReleaseDate.label"
-                android:textStyle="bold" />
-
-            <TextView
-                android:id="@+id/textViewCurrentSongReleaseDate"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/activity_main.currentSongReleaseDate.defaultValue" />
-        </TableRow>
-    </TableLayout>
+    <View
+        android:id="@+id/spacer6"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintHeight_percent="0.03"
+        app:layout_constraintTop_toBottomOf="@+id/textViewCurrentSongReleaseDate"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
 
     <ImageView
         android:id="@+id/imageViewCurrentSongAlbumCover"
-        android:layout_width="409dp"
-        android:layout_height="479dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintWidth_percent="0.9"
+        app:layout_constraintHeight_percent="0.35"
+        app:layout_constraintTop_toBottomOf="@+id/spacer6"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
         tools:srcCompat="@tools:sample/backgrounds/scenic" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

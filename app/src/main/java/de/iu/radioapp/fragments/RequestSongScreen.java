@@ -63,6 +63,7 @@ public class RequestSongScreen extends Fragment {
         setupTextInputSongAlbum();
         setupTextInputSongInterpreter();
         setupEditTextAdditionalMessage();
+        clean_screen();
     }
 
     private void setupButtonConfirm() {
@@ -121,6 +122,7 @@ public class RequestSongScreen extends Fragment {
         buttonConfirm.setEnabled(!title.isEmpty()
                 && !album.isEmpty()
                 && !interpreter.isEmpty());
+        //buttonConfirm.setBackground(getResources().getDrawable(R.drawable.button_shape_confirm));
     }
 
     private void clean_screen() {

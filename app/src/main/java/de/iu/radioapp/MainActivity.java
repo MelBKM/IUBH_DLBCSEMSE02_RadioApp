@@ -1,6 +1,7 @@
 package de.iu.radioapp;
 
 import android.os.Bundle;
+import android.widget.ImageButton;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -8,12 +9,11 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
-import android.widget.Button;
-
 import androidx.lifecycle.ViewModelProvider;
 
 import de.iu.radioapp.data.AppRepository;
 
+import de.iu.radioapp.fragments.ModeratorChatScreen;
 import de.iu.radioapp.service.SongInfoService;
 import de.iu.radioapp.service.PlaylistService;
 import de.iu.radioapp.service.SongRequestService;
@@ -26,9 +26,15 @@ import de.iu.radioapp.fragments.ModeratorRatingScreen;
 
 public class MainActivity extends AppCompatActivity {
 
-    private Button buttonPlaylist;
-    private Button buttonRequestSong;
-    private Button buttonModeratorRating;
+    private final int PLAYLIST_SCREEN = 0;
+    private final int REQUEST_SONG_SCREEN = 1;
+    private final int MODERATOR_RATING_SCREEN = 2;
+    private final int MODERATOR_CHAT_SCREEN = 3;
+
+    private ImageButton buttonPlaylist;
+    private ImageButton buttonRequestSong;
+    private ImageButton buttonModeratorRating;
+    private ImageButton buttonModeratorChat;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -74,6 +80,10 @@ public class MainActivity extends AppCompatActivity {
             loadModeratorRatingScreen();
         });
 
+        buttonModeratorChat = findViewById(R.id.buttonModeratorChat);
+        buttonModeratorChat.setOnClickListener(v -> {
+            loadModeratorChatScreen();
+        });
     }
 
     private void loadPlaylistScreen() {
@@ -81,9 +91,7 @@ public class MainActivity extends AppCompatActivity {
                 .setReorderingAllowed(true)
                 .replace(R.id.fragmentContainerView, PlaylistScreen.class, null)
                 .commit();
-        buttonPlaylist.setClickable(false);
-        buttonRequestSong.setClickable(true);
-        buttonModeratorRating.setClickable(true);
+        disableButtonForCurrentScreen(PLAYLIST_SCREEN);
     }
 
     private void loadRequestSongScreen() {
@@ -91,9 +99,7 @@ public class MainActivity extends AppCompatActivity {
                 .setReorderingAllowed(true)
                 .replace(R.id.fragmentContainerView, RequestSongScreen.class, null)
                 .commit();
-        buttonPlaylist.setClickable(true);
-        buttonRequestSong.setClickable(false);
-        buttonModeratorRating.setClickable(true);
+        disableButtonForCurrentScreen(REQUEST_SONG_SCREEN);
     }
 
     private void loadModeratorRatingScreen() {
@@ -101,10 +107,50 @@ public class MainActivity extends AppCompatActivity {
                 .setReorderingAllowed(true)
                 .replace(R.id.fragmentContainerView, ModeratorRatingScreen.class, null)
                 .commit();
+        disableButtonForCurrentScreen(MODERATOR_RATING_SCREEN);
+    }
 
-        buttonPlaylist.setClickable(true);
-        buttonRequestSong.setClickable(true);
-        buttonModeratorRating.setClickable(false);
+    private void loadModeratorChatScreen() {
+        getSupportFragmentManager().beginTransaction()
+                .setReorderingAllowed(true)
+                .replace(R.id.fragmentContainerView, ModeratorChatScreen.class, null)
+                .commit();
+        disableButtonForCurrentScreen(MODERATOR_CHAT_SCREEN);
+    }
+
+    private void disableButtonForCurrentScreen(int currentScreen) {
+        if (currentScreen == PLAYLIST_SCREEN) {
+            buttonPlaylist.setEnabled(false);
+            buttonPlaylist.setImageDrawable(getDrawable(R.drawable.navigation_playlist_blue));
+        } else {
+            buttonPlaylist.setEnabled(true);
+            buttonPlaylist.setImageDrawable(getDrawable(R.drawable.navigation_playlist));
+        }
+
+        if (currentScreen == REQUEST_SONG_SCREEN) {
+              buttonRequestSong.setEnabled(false);
+              buttonRequestSong.setImageDrawable(getDrawable(R.drawable.navigation_request_song_blue));
+        } else {
+              buttonRequestSong.setEnabled(true);
+              buttonRequestSong.setImageDrawable(getDrawable(R.drawable.navigation_request_song));
+        }
+
+
+         if (currentScreen == MODERATOR_RATING_SCREEN) {                                                                             
+               buttonModeratorRating.setEnabled(false);
+               buttonModeratorRating.setImageDrawable(getDrawable(R.drawable.navigation_moderator_rating_blue));
+         } else {
+               buttonModeratorRating.setEnabled(true);
+               buttonModeratorRating.setImageDrawable(getDrawable(R.drawable.navigation_moderator_rating));
+         }
+
+         if (currentScreen == MODERATOR_CHAT_SCREEN) {
+               buttonModeratorChat.setEnabled(false);
+               buttonModeratorChat.setImageDrawable(getDrawable(R.drawable.navigation_request_song_blue));
+         } else {
+             buttonModeratorChat.setEnabled(true);
+             buttonModeratorChat.setImageDrawable(getDrawable(R.drawable.navigation_request_song));
+         }
     }
 
 }

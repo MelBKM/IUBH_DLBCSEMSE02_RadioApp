@@ -9,44 +9,74 @@
     tools:layout_editor_absoluteX="0dp"
     tools:layout_editor_absoluteY="0dp">
 
-
-    <Button
+    <ImageButton
         android:id="@+id/buttonPlaylist"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Playlist"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintWidth_percent="0.25"
+        app:layout_constraintHeight_percent="0.1"
+        android:adjustViewBounds="true"
+        android:backgroundTint="@color/invisible"
+        android:scaleType="fitCenter"
+        android:src="@drawable/navigation_playlist"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.003"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        tools:src="@drawable/navigation_playlist" />
 
-    <Button
+    <ImageButton
         android:id="@+id/buttonSongRequest"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Song wünschen"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:adjustViewBounds="true"
+        android:backgroundTint="@color/invisible"
+        android:scaleType="fitCenter"
+        android:src="@drawable/navigation_request_song"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHeight_percent="0.1"
         app:layout_constraintHorizontal_bias="0.003"
-        app:layout_constraintStart_toEndOf="@+id/buttonPlaylist" />
+        app:layout_constraintStart_toEndOf="@+id/buttonPlaylist"
+        app:layout_constraintWidth_percent="0.25"
+        tools:src="@drawable/navigation_request_song" />
 
-    <Button
+    <ImageButton
         android:id="@+id/buttonModeratorRating"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Moderator bewerten"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintWidth_percent="0.25"
+        app:layout_constraintHeight_percent="0.1"
+        android:src="@drawable/navigation_moderator_rating"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.207"
+        app:layout_constraintHorizontal_bias="0.0"
+        android:adjustViewBounds="true"
+        android:backgroundTint="@color/invisible"
+        android:scaleType="fitCenter"
         app:layout_constraintStart_toEndOf="@+id/buttonSongRequest"
+        app:layout_constraintTop_toTopOf="@+id/buttonSongRequest"
+        tools:src="@drawable/navigation_moderator_rating" />
+
+    <ImageButton
+        android:id="@+id/buttonModeratorChat"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintHeight_percent="0.1"
+        app:layout_constraintWidth_percent="0.25"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        android:adjustViewBounds="true"
+        android:backgroundTint="@color/invisible"
+        android:scaleType="fitCenter"
+        app:layout_constraintStart_toEndOf="@+id/buttonModeratorRating"
         app:layout_constraintTop_toTopOf="@+id/buttonSongRequest" />
 
     <androidx.fragment.app.FragmentContainerView
         android:id="@+id/fragmentContainerView"
-        android:layout_width="0dp"
+        android:layout_width="match_parent"
         android:layout_height="0dp"
-        app:layout_constraintBottom_toTopOf="@+id/buttonSongRequest"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/buttonPlaylist"
+        app:layout_constraintHeight_percent="0.9"
         app:layout_constraintTop_toTopOf="parent" />
 
 
