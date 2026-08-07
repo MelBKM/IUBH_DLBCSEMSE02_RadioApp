@@ -1,0 +1,92 @@
+[
+  {
+    "username": "hungry_cat76",
+    "description": "Unglaublich bewegende Playlist! Von melancholischer, ruhiger Musik bis zu erregenden, stimulierenden Tönen, top!",
+    "points": 5.0,
+    "ratingType": "PLAYLIST"
+  },
+  {
+    "username": "matthias",
+    "description": "Kein Fan von Schlagermusik, für mich daher meh.",
+    "points": 1.5,
+    "ratingType": "PLAYLIST"
+  },
+  {
+    "username": "dustin_bustin",
+    "description": "Dieser Moderator hat es in sich. Entspannter Typ mit super angenehmer Stimme, ich höre jederzeit gerne wieder rein.",
+    "points": 5.0,
+    "ratingType": "PRESENTER"
+  },
+  {
+    "username": "drunk_rabbit",
+    "description": "Zwischendurch eingeschlafen, weil die Musik so beruhigend war, kam auf der Arbeit nicht gut an...",
+    "points": 2.5,
+    "ratingType": "PLAYLIST"
+  },
+  {
+    "username": "frozen_yoghurt",
+    "description": "Hammer Stimme!!!!!",
+    "points": 4.5,
+    "ratingType": "PRESENTER"
+  },
+  {
+    "username": "hot_fudge",
+    "description": "Ich würde ja selbst gerne Moderatorin werden, habe aber Angst vor dem Druck. Diese Dame weiß super gut damit umzugehen, Respekt!",
+    "points": 3.5,
+    "ratingType": "PRESENTER"
+  },
+  {
+    "username": "drunk_rabbit",
+    "description": "Nochmal eingeschlafen, bald bekomme ich Probleme...",
+    "points": 1.5,
+    "ratingType": "PLAYLIST"
+  },
+  {
+    "username": "moly_holy",
+    "description": "Letzte Nacht ein paar Stunden gehört, war nicht meine Musik, aber sympathisches Moderatorenteam",
+    "points": 2.0,
+    "ratingType": "PLAYLIST"
+  },
+  {
+    "username": "tangling_wagon",
+    "description": "Optimale Mischung aus den neuesten Hits, alten Klassikern und unvergessenen Legenden, aber dennoch fehlt mir Metal!",
+    "points": 4.0,
+    "ratingType": "PLAYLIST"
+  },
+  {
+    "username": "depressed_unicorn",
+    "description": "Gerne wieder",
+    "points": 5.0,
+    "ratingType": "PLAYLIST"
+  },
+  {
+    "username": "cominghome28",
+    "description": "Sender zufällig entdeckt und finde ihn höchst unseriös... ein klares Nein für mich!",
+    "points": 1.0,
+    "ratingType": "PRESENTER"
+  },
+  {
+    "username": "freakingout",
+    "description": "Unglaublicher Mix!",
+    "points": 5.0,
+    "ratingType": "PLAYLIST"
+  },
+  {
+    "username": "holycow91",
+    "description": "Kaum zu glauben, dass ich so lange ohne diesen Moderator auskommen musste!",
+    "points": 5.0,
+    "ratingType": "PRESENTER"
+  },
+  {
+    "username": "cycling_monkeys",
+    "description": "Der Humor zündet bei mir einfach nicht.",
+    "points": 1.0,
+    "ratingType": "PRESENTER"
+  },
+  {
+    "username": "treadmill",
+    "description": "Ganz großes Kino!",
+    "points": 5.0,
+    "ratingType": "PLAYLIST"
+  }
+]

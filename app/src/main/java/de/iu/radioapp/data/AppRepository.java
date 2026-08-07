@@ -15,6 +15,8 @@ import java.util.ArrayList;
 import de.iu.radioapp.model.Album;
 import de.iu.radioapp.model.Genre;
 import de.iu.radioapp.model.Musician;
+import de.iu.radioapp.model.Rating;
+import de.iu.radioapp.model.RatingType;
 import de.iu.radioapp.model.Song;
 
 public class AppRepository {
@@ -22,6 +24,7 @@ public class AppRepository {
     private final ArrayList<Musician> musicians = new ArrayList<>();
     private final ArrayList<Album> albums = new ArrayList<>();
     private final ArrayList<Song> songs = new ArrayList<>();
+    private final ArrayList<Rating> ratings = new ArrayList<>();
 
     /**
      * Creates the data objects the music data from the JSON file.
@@ -30,6 +33,7 @@ public class AppRepository {
      */
     public AppRepository(Context context) {
         loadMusicData(context);
+        loadRatings(context);
     }
 
     /**
@@ -94,6 +98,39 @@ public class AppRepository {
     }
 
     /**
+     * Reads the JSON file and creates rating objects
+     *
+     * @param context the Android context used to access the assets folder
+     */
+    private void loadRatings(Context context) {
+        try {
+            String jsonString = readJsonFromAssets(context, "data/ratings.json");
+
+            JSONArray ratingsArray = new JSONArray(jsonString);
+
+            String username;
+            String description;
+            double points;
+            RatingType ratingType;
+
+            for (int i = 0; i < ratingsArray.length(); i++) {
+                JSONObject ratingObject = ratingsArray.getJSONObject(i);
+
+                username = ratingObject.getString("username");
+                description = ratingObject.getString("description");
+                points = ratingObject.getDouble("points");
+                ratingType = RatingType.valueOf(ratingObject.getString("ratingType"));
+
+                ratings.add(new Rating(username, description, points, ratingType));
+            }
+
+            System.out.println(ratings.get(5).getDescription());
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    /**
      * Reads a JSON file from the assets folder and returns it as a String.
      *
      * @param context the Android context
@@ -130,5 +167,9 @@ public class AppRepository {
 
     public ArrayList<Song> getSongs() {
         return songs;
+    }
+
+    public ArrayList<Rating> getRatings() {
+        return ratings;
     }
 }
