@@ -58,10 +58,11 @@ public class MainActivity extends AppCompatActivity {
     private void connectServices() {
         ServiceViewModel serviceViewModel = new ViewModelProvider(this).get(ServiceViewModel.class);
         AppRepository appRepository = new AppRepository(this);
+        serviceViewModel.setAppRepository(appRepository);
         serviceViewModel.setSongInfoService(new SongInfoService(appRepository));
         serviceViewModel.setPlaylistService(new PlaylistService(appRepository));
         serviceViewModel.setSongRequestService(new SongRequestService());
-        serviceViewModel.setModeratorRatingService(new ModeratorRatingService());
+        serviceViewModel.setModeratorRatingService(new ModeratorRatingService(appRepository));
     }
 
     private void setupNavigation() {

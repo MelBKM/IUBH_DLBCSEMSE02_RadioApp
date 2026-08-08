@@ -52,7 +52,13 @@ public class PlaylistScreen extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+
+        serviceViewModel
+                .getSongInfoService()
+                .selectRandomSong();
+
         loadCurrentSong();
+        loadPlaylistRating();
         setupRatingFunction();
     }
 
@@ -72,7 +78,12 @@ public class PlaylistScreen extends Fragment {
         TextView releaseDate = view.findViewById(R.id.textViewCurrentSongReleaseDate);
         ImageView imageViewCurrentSongAlbumCover = view.findViewById(R.id.imageViewCurrentSongAlbumCover);
 
-        playlistName.setText("Aktuelle Playlist"); // TODO: Get name from Service
+        playlistName.setText(
+                serviceViewModel
+                        .getPlaylistService()
+                        .getPlaylistName()
+        );
+
         songTitle.setText(currentSong.getName());
         interpreter.setText(albumModel.
                 getMusician().
@@ -95,6 +106,19 @@ public class PlaylistScreen extends Fragment {
 
     }
 
+    private void loadPlaylistRating() {
+
+        RatingBar ratingBarPlaylist =
+                view.findViewById(R.id.ratingBarPlaylist);
+
+        double averageRating =
+                serviceViewModel
+                        .getPlaylistService()
+                        .getAveragePlaylistRating();
+
+        ratingBarPlaylist.setRating((float) averageRating);
+    }
+
     private void setupRatingFunction() {
         RatingBar ratingBarPlaylist =
                 view.findViewById(R.id.ratingBarPlaylist);
@@ -104,9 +128,13 @@ public class PlaylistScreen extends Fragment {
 
                     if (fromUser) {
                         boolean success =
-                                serviceViewModel.getPlaylistService().ratePlaylist(
-                                        (int) rating
-                                );
+                                serviceViewModel
+                                        .getPlaylistService()
+                                        .addPlaylistRating(
+                                                "user",
+                                                "",
+                                                rating
+                                        );
 
                         if (success) {
                             Toast.makeText(

@@ -115,25 +115,38 @@ public class ModeratorRatingScreen extends Fragment {
     }
 
     private void send() {
-        String moderatorName = textViewCurrentModerator.getText().toString();
-        int rating = (int) ratingBarModerator.getRating();
-        String message = textEditAdditionalMessage.getText().toString();
-        ModeratorRatingService moderatorRatingService = serviceViewModel
-                .getModeratorRatingService();
 
-        boolean success = moderatorRatingService.rateModerator(moderatorName, rating, message);
+        String moderatorName =
+                textViewCurrentModerator.getText().toString();
+
+        int rating =
+                (int) ratingBarModerator.getRating();
+
+        String message =
+                textEditAdditionalMessage.getText().toString();
+
+        ModeratorRatingService moderatorRatingService =
+                serviceViewModel.getModeratorRatingService();
+
+        boolean success =
+                moderatorRatingService.addModeratorRating(
+                        moderatorName,
+                        message,
+                        rating
+                );
 
         if (success) {
+
             clean_screen();
+
             Toast.makeText(
-                requireContext(),
-                String.format(
-                        "Moderator-Bewertung gespeichert.\nName: %s\nRating: %d\nMessage: %s",
-                        moderatorName,
-                        rating,
-                        message
-                ),
-                Toast.LENGTH_SHORT
+                    requireContext(),
+                    String.format(
+                            "Moderator-Bewertung gespeichert.\nModerator: %s\nRating: %d",
+                            moderatorName,
+                            rating
+                    ),
+                    Toast.LENGTH_SHORT
             ).show();
         }
     }

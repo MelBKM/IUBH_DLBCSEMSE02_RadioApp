@@ -12,13 +12,11 @@ import android.view.ViewGroup;
 import android.widget.Button;
 
 
-import java.util.ArrayList;
-import java.util.List;
-
 import de.iu.radioapp.R;
 import de.iu.radioapp.ServiceViewModel;
 import de.iu.radioapp.UserMessage;
 
+import java.util.List;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -30,12 +28,7 @@ public class ModeratorChatScreen extends Fragment {
     private View view;
     private ServiceViewModel serviceViewModel;
 
-    private final List<UserMessage> TEST_MESSAGES = new ArrayList<UserMessage>(4) {{
-        add(new UserMessage("Alice", "Hallo, wie geht’s?", 4));
-        add(new UserMessage("Bob", "Ich finde den Song super!", 5));
-        add(new UserMessage("Charlie", "Kannst du das nächste Lied spielen?", 3));
-        add(new UserMessage("Diana", "Tolles Programm heute!", 5));
-    }};
+
 
     private final UserMessage[] CURRENT_MESSAGES = {
             new UserMessage("", "", 0),
@@ -88,21 +81,30 @@ public class ModeratorChatScreen extends Fragment {
     }
 
 
+
     private void updateData() {
-        if (TEST_MESSAGES.isEmpty()) {
+
+        List<UserMessage> messages = serviceViewModel
+                .getModeratorRatingService()
+                .getModeratorMessages();
+
+        if (messages == null || messages.isEmpty()) {
             return;
         }
-        addNewMessageToCurrentData(TEST_MESSAGES.remove(0));
+
+        int numberOfMessages = Math.min(messages.size(), CURRENT_MESSAGES.length);
+
+        for (int i = 0; i < numberOfMessages; i++) {
+
+            int messageIndex = messages.size() - 1 - i;
+
+            CURRENT_MESSAGES[i] =
+                    messages.get(messageIndex);
+        }
+
         updateBubbles();
     }
 
-
-    private void addNewMessageToCurrentData(UserMessage userMessage) {
-        for (int i = 3; i >= 1 ; i--) {
-            CURRENT_MESSAGES[i] = CURRENT_MESSAGES[i-1];
-        }
-        CURRENT_MESSAGES[0] = userMessage;
-    }
 
     private void updateBubbles() {
         for (int i = 0; i <= 3 ; i++) {
