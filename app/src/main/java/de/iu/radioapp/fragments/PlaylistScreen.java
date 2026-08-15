@@ -81,7 +81,7 @@ public class PlaylistScreen extends Fragment {
         playlistName.setText(
                 serviceViewModel
                         .getPlaylistService()
-                        .getPlaylistName()
+                        .getPlaylistName(currentSong)
         );
 
         songTitle.setText(currentSong.getName());

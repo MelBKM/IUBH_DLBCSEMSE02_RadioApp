@@ -25,9 +25,25 @@ public class PlaylistService {
      * Da in der Datenschicht derzeit kein eigener Playlistname hinterlegt ist,
      * wird ein fester Wert als Stub verwendet.
      */
-    public String getPlaylistName() {
+    public String getPlaylistName(Song song) {
 
-        return "Aktuelle Playlist";
+        if (song == null || song.getGenre() == null) {
+            return "Radio Mix";
+        }
+
+        switch (song.getGenre()) {
+            case POP:
+                return "Pop Hits";
+
+            case ROCK:
+                return "Rock Classics";
+
+            case RAP:
+                return "Rap Selection";
+
+            default:
+                return "Radio Mix";
+        }
     }
 
     /**
