@@ -1,22 +1,23 @@
 <resources>
     <string name="app_name">RadioApp</string>
-    <string name="activity_main.currentPlaylist.label">Playliste:</string>
-    <string name="activity_main.currentPlaylist.defaultValue">Name der Playliste</string>
-    <string name="activity_main.currentSongTitle.label">Titel:</string>
-    <string name="activity_main.currentSongTitle.defaultValue">Yellow Submarine</string>
-    <string name="activity_main.currentSongInterpreter.label">Interpreter:</string>
-    <string name="activity_main.currentSongInterpreter.defaultValue">The Beatles</string>
-    <string name="activity_main.currentSongAlbum.label">Album:</string>
-    <string name="activity_main.currentSongAlbum.defaultValue">Yellow Submarine</string>
-    <string name="activity_main.currentSongReleaseDate.label">Veröffentlicht:</string>
-    <string name="activity_main.currentSongReleaseDate.defaultValue">1966</string>
 
-    <string name="activity_request_song.activityTitle.label">Einen Song wünschen</string>
-    <string name="activity_request_song.songTitle.label">Titel <font color='#FF0000'>*</font></string>
-    <string name="activity_request_song.songAlbum.label">Album <font color='#FF0000'>*</font></string>
-    <string name="activity_request_song.songInterpreter.label">Interpreter <font color='#FF0000'>*</font></string>
-    <string name="activity_request_song.buttonConfirm.label">Senden</string>
-    <string name="activity_request_song.buttonCancel.label">Abbrechen</string>
+    <string name="playlist.currentPlaylist.label">Playliste:</string>
+    <string name="playlist.currentPlaylist.defaultValue">Name der Playliste</string>
+    <string name="playlist.currentSongTitle.label">Titel:</string>
+    <string name="playlist.currentSongTitle.defaultValue">Yellow Submarine</string>
+    <string name="playlist.currentSongInterpreter.label">Interpreter:</string>
+    <string name="playlist.currentSongInterpreter.defaultValue">The Beatles</string>
+    <string name="playlist.currentSongAlbum.label">Album:</string>
+    <string name="playlist.currentSongAlbum.defaultValue">Yellow Submarine</string>
+    <string name="playlist.currentSongReleaseDate.label">Veröffentlicht:</string>
+    <string name="playlist.currentSongReleaseDate.defaultValue">1966</string>
+
+    <string name="request_song.activityTitle.label">Einen Song wünschen</string>
+    <string name="request_song.songTitle.label">Titel <font color='#FF0000'>*</font></string>
+    <string name="request_song.songAlbum.label">Album <font color='#FF0000'>*</font></string>
+    <string name="request_song.songInterpreter.label">Interpreter <font color='#FF0000'>*</font></string>
+    <string name="request_song.buttonConfirm.label">Senden</string>
+    <string name="request_song.buttonCancel.label">Abbrechen</string>
 
     <string name="moderator_rating.fragmentTitle.label">Moderator bewerten</string>
     <string name="moderator_rating.moderatorName.label">Moderator:</string>
@@ -24,6 +25,8 @@
     <string name="moderator_rating.moderatorMessage.label">Nachricht</string>
     <string name="moderator_rating.buttonConfirm.label">Senden</string>
     <string name="moderator_rating.buttonCancel.label">Abbrechen</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string name="chat_bubble.userName.defaultValue">Klara aus Baden</string>
+    <string name="chat_bubble.userMessage.defaultValue">Nutzer Nachricht</string>
+
 </resources>

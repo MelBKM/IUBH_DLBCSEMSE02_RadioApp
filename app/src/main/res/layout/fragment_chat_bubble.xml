@@ -7,7 +7,7 @@
     android:layout_height="match_parent">
 
     <ImageView
-        android:id="@+id/imageView"
+        android:id="@+id/chat_bubble_imageView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:src="@drawable/chat_bubble"
@@ -17,7 +17,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <View
-        android:id="@+id/spacerLeft"
+        android:id="@+id/chat_bubble_spacerLeft"
         android:layout_width="0dp"
         android:layout_height="0dp"
         app:layout_constraintWidth_percent="0.12"
@@ -26,40 +26,40 @@
         app:layout_constraintBottom_toBottomOf="parent" />
 
     <View
-        android:id="@+id/spacerInsideTop"
+        android:id="@+id/chat_bubble_spacerInsideTop"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        app:layout_constraintEnd_toEndOf="@+id/imageView"
+        app:layout_constraintEnd_toEndOf="@+id/chat_bubble_imageView"
         app:layout_constraintHeight_percent="0.07"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <!-- Abstand -->
     <TextView
-        android:id="@+id/textViewUser"
+        android:id="@+id/chat_bubble_textViewUser"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:text="Klara aus Baden"
+        android:text="@string/chat_bubble.userName.defaultValue"
         android:textSize="10sp"
         android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="@+id/imageView"
+        app:layout_constraintEnd_toEndOf="@+id/chat_bubble_imageView"
         app:layout_constraintHeight_percent="0.16"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@+id/spacerLeft"
-        app:layout_constraintTop_toBottomOf="@+id/spacerInsideTop"
+        app:layout_constraintStart_toEndOf="@+id/chat_bubble_spacerLeft"
+        app:layout_constraintTop_toBottomOf="@+id/chat_bubble_spacerInsideTop"
         app:layout_constraintWidth_percent="0.8" />
 
     <View
-        android:id="@+id/spacerUserToRating"
+        android:id="@+id/chat_bubble_spacerUserToRating"
         android:layout_width="0dp"
         android:layout_height="0dp"
         app:layout_constraintHeight_percent="0.000"
-        app:layout_constraintTop_toBottomOf="@+id/textViewUser"
-        app:layout_constraintStart_toStartOf="@+id/imageView"
-        app:layout_constraintEnd_toEndOf="@+id/imageView" />
+        app:layout_constraintTop_toBottomOf="@+id/chat_bubble_textViewUser"
+        app:layout_constraintStart_toStartOf="@+id/chat_bubble_imageView"
+        app:layout_constraintEnd_toEndOf="@+id/chat_bubble_imageView" />
 
     <RatingBar
-        android:id="@+id/ratingBarChatBubble"
+        android:id="@+id/chat_bubble_ratingBarChatBubble"
         android:layout_width="wrap_content"
         android:layout_height="0dp"
         android:max="5"
@@ -69,28 +69,28 @@
         android:transformPivotX="0dp"
         android:transformPivotY="0dp"
         app:layout_constraintHeight_percent="0.35"
-        app:layout_constraintStart_toStartOf="@+id/textViewUser"
-        app:layout_constraintTop_toBottomOf="@+id/spacerUserToRating" />
+        app:layout_constraintStart_toStartOf="@+id/chat_bubble_textViewUser"
+        app:layout_constraintTop_toBottomOf="@+id/chat_bubble_spacerUserToRating" />
 
     <View
-        android:id="@+id/spacerUserToMessage"
+        android:id="@+id/chat_bubble_spacerUserToMessage"
         android:layout_width="0dp"
         android:layout_height="0dp"
         app:layout_constraintHeight_percent="0.25"
-        app:layout_constraintTop_toBottomOf="@+id/textViewUser"
-        app:layout_constraintStart_toStartOf="@+id/imageView"
-        app:layout_constraintEnd_toEndOf="@+id/spacerUserToRating" />
+        app:layout_constraintTop_toBottomOf="@+id/chat_bubble_textViewUser"
+        app:layout_constraintStart_toStartOf="@+id/chat_bubble_imageView"
+        app:layout_constraintEnd_toEndOf="@+id/chat_bubble_spacerUserToRating" />
 
     <TextView
-        android:id="@+id/textViewUserMessage"
+        android:id="@+id/chat_bubble_textViewUserMessage"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="Nutzer Nachricht"
+        android:text="@string/chat_bubble.userMessage.defaultValue"
         android:textSize="10sp"
-        app:layout_constraintEnd_toEndOf="@+id/imageView"
+        app:layout_constraintEnd_toEndOf="@+id/chat_bubble_imageView"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/textViewUser"
-        app:layout_constraintTop_toBottomOf="@+id/spacerUserToMessage"
+        app:layout_constraintStart_toStartOf="@+id/chat_bubble_textViewUser"
+        app:layout_constraintTop_toBottomOf="@+id/chat_bubble_spacerUserToMessage"
         app:layout_constraintWidth_percent="0.78" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

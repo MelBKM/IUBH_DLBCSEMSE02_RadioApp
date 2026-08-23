@@ -66,22 +66,22 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void setupNavigation() {
-        buttonPlaylist = findViewById(R.id.buttonPlaylist);
+        buttonPlaylist = findViewById(R.id.activity_main_buttonPlaylist);
         buttonPlaylist.setOnClickListener(v -> {
             loadPlaylistScreen();
         });
 
-        buttonRequestSong = findViewById(R.id.buttonSongRequest);
+        buttonRequestSong = findViewById(R.id.activity_main_buttonSongRequest);
         buttonRequestSong.setOnClickListener(v -> {
             loadRequestSongScreen();
         });
 
-        buttonModeratorRating = findViewById(R.id.buttonModeratorRating);
+        buttonModeratorRating = findViewById(R.id.activity_main_buttonModeratorRating);
         buttonModeratorRating.setOnClickListener(v -> {
             loadModeratorRatingScreen();
         });
 
-        buttonModeratorChat = findViewById(R.id.buttonModeratorChat);
+        buttonModeratorChat = findViewById(R.id.activity_main_buttonModeratorChat);
         buttonModeratorChat.setOnClickListener(v -> {
             loadModeratorChatScreen();
         });
@@ -90,7 +90,7 @@ public class MainActivity extends AppCompatActivity {
     private void loadPlaylistScreen() {
         getSupportFragmentManager().beginTransaction()
                 .setReorderingAllowed(true)
-                .replace(R.id.fragmentContainerView, PlaylistScreen.class, null)
+                .replace(R.id.activity_main_fragmentContainerView, PlaylistScreen.class, null)
                 .commit();
         disableButtonForCurrentScreen(PLAYLIST_SCREEN);
     }
@@ -98,7 +98,7 @@ public class MainActivity extends AppCompatActivity {
     private void loadRequestSongScreen() {
         getSupportFragmentManager().beginTransaction()
                 .setReorderingAllowed(true)
-                .replace(R.id.fragmentContainerView, RequestSongScreen.class, null)
+                .replace(R.id.activity_main_fragmentContainerView, RequestSongScreen.class, null)
                 .commit();
         disableButtonForCurrentScreen(REQUEST_SONG_SCREEN);
     }
@@ -106,7 +106,7 @@ public class MainActivity extends AppCompatActivity {
     private void loadModeratorRatingScreen() {
         getSupportFragmentManager().beginTransaction()
                 .setReorderingAllowed(true)
-                .replace(R.id.fragmentContainerView, ModeratorRatingScreen.class, null)
+                .replace(R.id.activity_main_fragmentContainerView, ModeratorRatingScreen.class, null)
                 .commit();
         disableButtonForCurrentScreen(MODERATOR_RATING_SCREEN);
     }
@@ -114,7 +114,7 @@ public class MainActivity extends AppCompatActivity {
     private void loadModeratorChatScreen() {
         getSupportFragmentManager().beginTransaction()
                 .setReorderingAllowed(true)
-                .replace(R.id.fragmentContainerView, ModeratorChatScreen.class, null)
+                .replace(R.id.activity_main_fragmentContainerView, ModeratorChatScreen.class, null)
                 .commit();
         disableButtonForCurrentScreen(MODERATOR_CHAT_SCREEN);
     }

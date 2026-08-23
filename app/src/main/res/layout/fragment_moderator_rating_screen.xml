@@ -7,7 +7,7 @@
     android:layout_height="match_parent">
 
     <View
-        android:id="@+id/spacerTop"
+        android:id="@+id/moderator_rating_spacerTop"
         android:layout_width="0dp"
         android:layout_height="0dp"
         app:layout_constraintHeight_percent="0.03"
@@ -16,7 +16,7 @@
         app:layout_constraintEnd_toEndOf="parent" />
 
     <TextView
-        android:id="@+id/labelActivityTitle"
+        android:id="@+id/moderator_rating_labelActivityTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/moderator_rating.fragmentTitle.label"
@@ -24,87 +24,87 @@
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/spacerTop" />
+        app:layout_constraintTop_toBottomOf="@+id/moderator_rating_spacerTop" />
 
     <View
-        android:id="@+id/spacer1"
+        android:id="@+id/moderator_rating_spacer1"
         android:layout_width="0dp"
         android:layout_height="0dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHeight_percent="0.03"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/labelActivityTitle" />
+        app:layout_constraintTop_toBottomOf="@+id/moderator_rating_labelActivityTitle" />
 
     <TextView
-        android:id="@+id/labelSongTitle"
+        android:id="@+id/moderator_rating_labelSongTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="12dp"
         android:text="@string/moderator_rating.moderatorName.label"
         android:textSize="24sp"
-        app:layout_constraintStart_toStartOf="@+id/labelActivityTitle"
-        app:layout_constraintTop_toBottomOf="@+id/spacer1" />
+        app:layout_constraintStart_toStartOf="@+id/moderator_rating_labelActivityTitle"
+        app:layout_constraintTop_toBottomOf="@+id/moderator_rating_spacer1" />
 
     <TextView
-        android:id="@+id/textViewCurrentModerator"
+        android:id="@+id/moderator_rating_textViewCurrentModerator"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/moderator_rating.moderatorName.defaultValue"
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.174"
-        app:layout_constraintStart_toEndOf="@+id/labelSongTitle"
-        app:layout_constraintTop_toTopOf="@+id/labelSongTitle"
+        app:layout_constraintStart_toEndOf="@+id/moderator_rating_labelSongTitle"
+        app:layout_constraintTop_toTopOf="@+id/moderator_rating_labelSongTitle"
         app:layout_constraintWidth_percent="0.45" />
 
     <View
-        android:id="@+id/spacer2"
+        android:id="@+id/moderator_rating_spacer2"
         android:layout_width="0dp"
         android:layout_height="0dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHeight_percent="0.02"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/labelSongTitle" />
+        app:layout_constraintTop_toBottomOf="@+id/moderator_rating_labelSongTitle" />
 
     <RatingBar
-        android:id="@+id/ratingBarModerator"
+        android:id="@+id/moderator_rating_ratingBarModerator"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:max="5"
         android:numStars="5"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/spacer2" />
+        app:layout_constraintTop_toBottomOf="@+id/moderator_rating_spacer2" />
 
     <View
-        android:id="@+id/spacer3"
+        android:id="@+id/moderator_rating_spacer3"
         android:layout_width="0dp"
         android:layout_height="0dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHeight_percent="0.03"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ratingBarModerator" />
+        app:layout_constraintTop_toBottomOf="@+id/moderator_rating_ratingBarModerator" />
 
     <TextView
-        android:id="@+id/labelModeratorAdditionalMessage"
+        android:id="@+id/moderator_rating_labelModeratorAdditionalMessage"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/moderator_rating.moderatorMessage.label"
         android:textSize="24sp"
-        app:layout_constraintStart_toStartOf="@+id/labelActivityTitle"
-        app:layout_constraintTop_toBottomOf="@+id/spacer3" />
+        app:layout_constraintStart_toStartOf="@+id/moderator_rating_labelActivityTitle"
+        app:layout_constraintTop_toBottomOf="@+id/moderator_rating_spacer3" />
 
     <View
-        android:id="@+id/spacer4"
+        android:id="@+id/moderator_rating_spacer4"
         android:layout_width="0dp"
         android:layout_height="0dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHeight_percent="0.015"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/labelModeratorAdditionalMessage" />
+        app:layout_constraintTop_toBottomOf="@+id/moderator_rating_labelModeratorAdditionalMessage" />
 
     <EditText
-        android:id="@+id/editTextAdditionalMessage"
+        android:id="@+id/moderator_rating_editTextAdditionalMessage"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:background="@drawable/text_field_boarder"
@@ -114,21 +114,21 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHeight_percent="0.25"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/labelModeratorAdditionalMessage"
-        app:layout_constraintTop_toBottomOf="@+id/spacer4"
+        app:layout_constraintStart_toStartOf="@+id/moderator_rating_labelModeratorAdditionalMessage"
+        app:layout_constraintTop_toBottomOf="@+id/moderator_rating_spacer4"
         app:layout_constraintWidth_percent="0.8" />
 
     <View
-        android:id="@+id/spacer5"
+        android:id="@+id/moderator_rating_spacer5"
         android:layout_width="0dp"
         android:layout_height="0dp"
         app:layout_constraintHeight_percent="0.05"
-        app:layout_constraintTop_toBottomOf="@+id/editTextAdditionalMessage"
+        app:layout_constraintTop_toBottomOf="@+id/moderator_rating_editTextAdditionalMessage"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
     <Button
-        android:id="@+id/btnCancel"
+        android:id="@+id/moderator_rating_btnCancel"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:backgroundTint="@android:color/holo_red_dark"
@@ -136,11 +136,11 @@
         android:textSize="18sp"
         app:layout_constraintWidth_percent="0.35"
         app:layout_constraintHeight_percent="0.08"
-        app:layout_constraintStart_toStartOf="@+id/editTextAdditionalMessage"
-        app:layout_constraintTop_toBottomOf="@+id/spacer5" />
+        app:layout_constraintStart_toStartOf="@+id/moderator_rating_editTextAdditionalMessage"
+        app:layout_constraintTop_toBottomOf="@+id/moderator_rating_spacer5" />
 
     <Button
-        android:id="@+id/btnConfirm"
+        android:id="@+id/moderator_rating_btnConfirm"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:backgroundTint="@android:color/holo_green_dark"
@@ -148,8 +148,8 @@
         android:textSize="18sp"
         app:layout_constraintWidth_percent="0.35"
         app:layout_constraintHeight_percent="0.08"
-        app:layout_constraintEnd_toEndOf="@+id/editTextAdditionalMessage"
-        app:layout_constraintTop_toTopOf="@+id/btnCancel"
-        app:layout_constraintBottom_toBottomOf="@+id/btnCancel" />
+        app:layout_constraintEnd_toEndOf="@+id/moderator_rating_editTextAdditionalMessage"
+        app:layout_constraintTop_toTopOf="@+id/moderator_rating_btnCancel"
+        app:layout_constraintBottom_toBottomOf="@+id/moderator_rating_btnCancel" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

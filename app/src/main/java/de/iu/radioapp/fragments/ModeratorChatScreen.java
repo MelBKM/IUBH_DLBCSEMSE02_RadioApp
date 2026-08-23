@@ -9,7 +9,6 @@ import androidx.lifecycle.ViewModelProvider;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 
 
 import de.iu.radioapp.R;
@@ -66,18 +65,13 @@ public class ModeratorChatScreen extends Fragment {
         super.onViewCreated(view, savedInstanceState);
         populateBubbleList();
         updateData();
-
-        Button button = view.findViewById(R.id.button);
-        button.setOnClickListener(v -> {
-            updateData();
-        });
     }
 
     private void populateBubbleList(){
-        bubbleList[0] = R.id.fragmentContainerViewBubble1;
-        bubbleList[1] = R.id.fragmentContainerViewBubble2;
-        bubbleList[2] = R.id.fragmentContainerViewBubble3;
-        bubbleList[3] = R.id.fragmentContainerViewBubble4;
+        bubbleList[0] = R.id.moderator_chat_fragmentContainerViewBubble1;
+        bubbleList[1] = R.id.moderator_chat_fragmentContainerViewBubble2;
+        bubbleList[2] = R.id.moderator_chat_fragmentContainerViewBubble3;
+        bubbleList[3] = R.id.moderator_chat_fragmentContainerViewBubble4;
     }
 
 

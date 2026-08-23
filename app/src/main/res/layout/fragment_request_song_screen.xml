@@ -7,7 +7,7 @@
     android:layout_height="match_parent">
 
     <View
-        android:id="@+id/spacerTop"
+        android:id="@+id/request_song_spacerTop"
         android:layout_width="0dp"
         android:layout_height="0dp"
         app:layout_constraintHeight_percent="0.01"
@@ -16,46 +16,46 @@
         app:layout_constraintEnd_toEndOf="parent" />
 
     <TextView
-        android:id="@+id/labelActivityTitle"
+        android:id="@+id/request_song_labelActivityTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@+id/spacerTop"
+        app:layout_constraintTop_toBottomOf="@+id/request_song_spacerTop"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:text="@string/activity_request_song.activityTitle.label"
+        android:text="@string/request_song.activityTitle.label"
         android:textSize="34sp"
         android:textStyle="bold" />
 
     <View
-        android:id="@+id/spacer1"
+        android:id="@+id/request_song_spacer1"
         android:layout_width="0dp"
         android:layout_height="0dp"
         app:layout_constraintHeight_percent="0.01"
-        app:layout_constraintTop_toBottomOf="@+id/labelActivityTitle"
+        app:layout_constraintTop_toBottomOf="@+id/request_song_labelActivityTitle"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
     <TextView
-        android:id="@+id/labelSongTitle"
+        android:id="@+id/request_song_labelSongTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="40dp"
-        android:text="@string/activity_request_song.songTitle.label"
+        android:text="@string/request_song.songTitle.label"
         android:textSize="24sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/spacer1" />
+        app:layout_constraintTop_toBottomOf="@+id/request_song_spacer1" />
 
     <View
-        android:id="@+id/spacer2"
+        android:id="@+id/request_song_spacer2"
         android:layout_width="0dp"
         android:layout_height="0dp"
         app:layout_constraintHeight_percent="0.015"
-        app:layout_constraintTop_toBottomOf="@+id/labelSongTitle"
+        app:layout_constraintTop_toBottomOf="@+id/request_song_labelSongTitle"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
     <EditText
-        android:id="@+id/textInputSongTitle"
+        android:id="@+id/request_song_textInputSongTitle"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:background="@drawable/text_field_boarder"
@@ -64,40 +64,40 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHeight_percent="0.06"
         app:layout_constraintHorizontal_bias="0.023"
-        app:layout_constraintStart_toStartOf="@+id/labelSongTitle"
-        app:layout_constraintTop_toBottomOf="@+id/spacer2"
+        app:layout_constraintStart_toStartOf="@+id/request_song_labelSongTitle"
+        app:layout_constraintTop_toBottomOf="@+id/request_song_spacer2"
         app:layout_constraintWidth_percent="0.8" />
 
     <View
-        android:id="@+id/spacer3"
+        android:id="@+id/request_song_spacer3"
         android:layout_width="0dp"
         android:layout_height="0dp"
         app:layout_constraintHeight_percent="0.01"
-        app:layout_constraintTop_toBottomOf="@+id/textInputSongTitle"
+        app:layout_constraintTop_toBottomOf="@+id/request_song_textInputSongTitle"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
     <TextView
-        android:id="@+id/labelSongAlbum"
+        android:id="@+id/request_song_labelSongAlbum"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="0dp"
-        android:text="@string/activity_request_song.songAlbum.label"
+        android:text="@string/request_song.songAlbum.label"
         android:textSize="24sp"
-        app:layout_constraintStart_toStartOf="@+id/labelSongTitle"
-        app:layout_constraintTop_toBottomOf="@+id/spacer3" />
+        app:layout_constraintStart_toStartOf="@+id/request_song_labelSongTitle"
+        app:layout_constraintTop_toBottomOf="@+id/request_song_spacer3" />
 
     <View
-        android:id="@+id/spacer4"
+        android:id="@+id/request_song_spacer4"
         android:layout_width="0dp"
         android:layout_height="0dp"
         app:layout_constraintHeight_percent="0.015"
-        app:layout_constraintTop_toBottomOf="@+id/labelSongAlbum"
+        app:layout_constraintTop_toBottomOf="@+id/request_song_labelSongAlbum"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
     <EditText
-        android:id="@+id/textInputSongAlbum"
+        android:id="@+id/request_song_textInputSongAlbum"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:background="@drawable/text_field_boarder"
@@ -106,38 +106,38 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHeight_percent="0.06"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/labelSongAlbum"
-        app:layout_constraintTop_toBottomOf="@+id/spacer4"
+        app:layout_constraintStart_toStartOf="@+id/request_song_labelSongAlbum"
+        app:layout_constraintTop_toBottomOf="@+id/request_song_spacer4"
         app:layout_constraintWidth_percent="0.8" />
 
     <View
-        android:id="@+id/spacer5"
+        android:id="@+id/request_song_spacer5"
         android:layout_width="0dp"
         android:layout_height="0dp"
         app:layout_constraintHeight_percent="0.01"
-        app:layout_constraintTop_toBottomOf="@+id/textInputSongAlbum"
+        app:layout_constraintTop_toBottomOf="@+id/request_song_textInputSongAlbum"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
     <TextView
-        android:id="@+id/labelSongInterpreter"
+        android:id="@+id/request_song_labelSongInterpreter"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@+id/spacer5"
-        app:layout_constraintStart_toStartOf="@+id/labelSongTitle"
-        android:text="@string/activity_request_song.songInterpreter.label"
+        app:layout_constraintTop_toBottomOf="@+id/request_song_spacer5"
+        app:layout_constraintStart_toStartOf="@+id/request_song_labelSongTitle"
+        android:text="@string/request_song.songInterpreter.label"
         android:textSize="24sp" />
 
     <View
-        android:id="@+id/spacer6"
+        android:id="@+id/request_song_spacer6"
         android:layout_width="0dp"
         android:layout_height="0dp"
         app:layout_constraintHeight_percent="0.015"
-        app:layout_constraintTop_toBottomOf="@+id/labelSongInterpreter"
+        app:layout_constraintTop_toBottomOf="@+id/request_song_labelSongInterpreter"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
     <EditText
-        android:id="@+id/textInputSongInterpreter"
+        android:id="@+id/request_song_textInputSongInterpreter"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:background="@drawable/text_field_boarder"
@@ -146,39 +146,39 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHeight_percent="0.06"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/labelSongInterpreter"
-        app:layout_constraintTop_toBottomOf="@+id/spacer6"
+        app:layout_constraintStart_toStartOf="@+id/request_song_labelSongInterpreter"
+        app:layout_constraintTop_toBottomOf="@+id/request_song_spacer6"
         app:layout_constraintWidth_percent="0.8" />
 
     <View
-        android:id="@+id/spacer7"
+        android:id="@+id/request_song_spacer7"
         android:layout_width="0dp"
         android:layout_height="0dp"
         app:layout_constraintHeight_percent="0.01"
-        app:layout_constraintTop_toBottomOf="@+id/textInputSongInterpreter"
+        app:layout_constraintTop_toBottomOf="@+id/request_song_textInputSongInterpreter"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
     <TextView
-        android:id="@+id/labelSongAdditionalMessage"
+        android:id="@+id/request_song_labelSongAdditionalMessage"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@+id/spacer7"
-        app:layout_constraintStart_toStartOf="@+id/labelSongTitle"
+        app:layout_constraintTop_toBottomOf="@+id/request_song_spacer7"
+        app:layout_constraintStart_toStartOf="@+id/request_song_labelSongTitle"
         android:text="Weitere Informationen"
         android:textSize="24sp" />
 
     <View
-        android:id="@+id/spacer8"
+        android:id="@+id/request_song_spacer8"
         android:layout_width="0dp"
         android:layout_height="0dp"
         app:layout_constraintHeight_percent="0.015"
-        app:layout_constraintTop_toBottomOf="@+id/labelSongAdditionalMessage"
+        app:layout_constraintTop_toBottomOf="@+id/request_song_labelSongAdditionalMessage"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
     <EditText
-        android:id="@+id/editTextAdditionalMessage"
+        android:id="@+id/request_song_editTextAdditionalMessage"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:background="@drawable/text_field_boarder"
@@ -188,40 +188,40 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHeight_percent="0.25"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/labelSongAdditionalMessage"
-        app:layout_constraintTop_toBottomOf="@+id/spacer8"
+        app:layout_constraintStart_toStartOf="@+id/request_song_labelSongAdditionalMessage"
+        app:layout_constraintTop_toBottomOf="@+id/request_song_spacer8"
         app:layout_constraintWidth_percent="0.8" />
 
     <View
-        android:id="@+id/spacer9"
+        android:id="@+id/request_song_spacer9"
         android:layout_width="0dp"
         android:layout_height="0dp"
         app:layout_constraintHeight_percent="0.03"
-        app:layout_constraintTop_toBottomOf="@+id/editTextAdditionalMessage"
+        app:layout_constraintTop_toBottomOf="@+id/request_song_editTextAdditionalMessage"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
     <Button
-        android:id="@+id/btnCancel"
+        android:id="@+id/request_song_btnCancel"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        app:layout_constraintWidth_percent="0.35"
-        app:layout_constraintHeight_percent="0.08"
-        app:layout_constraintTop_toBottomOf="@+id/spacer9"
-        app:layout_constraintStart_toStartOf="@+id/editTextAdditionalMessage"
+        app:layout_constraintWidth_percent="0.38"
+        app:layout_constraintHeight_percent="0.1"
+        app:layout_constraintTop_toBottomOf="@+id/request_song_spacer9"
+        app:layout_constraintStart_toStartOf="@+id/request_song_editTextAdditionalMessage"
         android:backgroundTint="@android:color/holo_red_dark"
         android:text="@string/moderator_rating.buttonCancel.label"
         android:textSize="18sp" />
 
     <Button
-        android:id="@+id/btnConfirm"
+        android:id="@+id/request_song_btnConfirm"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        app:layout_constraintWidth_percent="0.35"
-        app:layout_constraintHeight_percent="0.08"
-        app:layout_constraintEnd_toEndOf="@+id/editTextAdditionalMessage"
-        app:layout_constraintTop_toTopOf="@+id/btnCancel"
-        app:layout_constraintBottom_toBottomOf="@+id/btnCancel"
+        app:layout_constraintWidth_percent="0.38"
+        app:layout_constraintHeight_percent="0.1"
+        app:layout_constraintEnd_toEndOf="@+id/request_song_editTextAdditionalMessage"
+        app:layout_constraintTop_toTopOf="@+id/request_song_btnCancel"
+        app:layout_constraintBottom_toBottomOf="@+id/request_song_btnCancel"
         android:backgroundTint="@android:color/holo_green_dark"
         android:text="@string/moderator_rating.buttonConfirm.label"
         android:textSize="18sp" />

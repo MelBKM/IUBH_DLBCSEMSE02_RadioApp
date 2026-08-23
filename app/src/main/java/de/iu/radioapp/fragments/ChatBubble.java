@@ -64,9 +64,9 @@ public class ChatBubble extends Fragment {
     }
 
     private void loadUserData() {
-        TextView textViewUser = view.findViewById(R.id.textViewUser);
-        TextView textViewUserMessage = view.findViewById(R.id.textViewUserMessage);
-        RatingBar ratingBarChatBubble = view.findViewById(R.id.ratingBarChatBubble);
+        TextView textViewUser = view.findViewById(R.id.chat_bubble_textViewUser);
+        TextView textViewUserMessage = view.findViewById(R.id.chat_bubble_textViewUserMessage);
+        RatingBar ratingBarChatBubble = view.findViewById(R.id.chat_bubble_ratingBarChatBubble);
 
         if (user.isEmpty()) {
             textViewUser.setText("");

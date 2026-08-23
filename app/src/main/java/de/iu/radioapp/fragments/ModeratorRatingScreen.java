@@ -49,7 +49,7 @@ public class ModeratorRatingScreen extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        view = inflater.inflate(R.layout.fragment_rate_moderator, container, false);
+        view = inflater.inflate(R.layout.fragment_moderator_rating_screen, container, false);
         return view;
     }
 
@@ -65,7 +65,7 @@ public class ModeratorRatingScreen extends Fragment {
     }
 
     private void setupButtonConfirm() {
-        buttonConfirm = view.findViewById(R.id.btnConfirm);
+        buttonConfirm = view.findViewById(R.id.moderator_rating_btnConfirm);
         buttonConfirm.setClickable(false);
         buttonConfirm.setOnClickListener(v -> {
             send();
@@ -73,18 +73,18 @@ public class ModeratorRatingScreen extends Fragment {
     }
 
     private void setupButtonCancel() {
-        buttonCancel = view.findViewById(R.id.btnCancel);
+        buttonCancel = view.findViewById(R.id.moderator_rating_btnCancel);
         buttonCancel.setOnClickListener(v -> {
             cancel();
         });
     }
 
     private void setupTextEditAdditionalMessage() {
-        textEditAdditionalMessage = view.findViewById(R.id.editTextAdditionalMessage);
+        textEditAdditionalMessage = view.findViewById(R.id.moderator_rating_editTextAdditionalMessage);
     }
 
     private void setupRatingBar() {
-        ratingBarModerator = view.findViewById(R.id.ratingBarModerator);
+        ratingBarModerator = view.findViewById(R.id.moderator_rating_ratingBarModerator);
         ratingBarModerator.setOnRatingBarChangeListener(
                 (ratingBar, rating, fromUser) -> {
                     validate();
@@ -93,7 +93,7 @@ public class ModeratorRatingScreen extends Fragment {
     }
 
     private void setupTextViewCurrentModerator() {
-        textViewCurrentModerator = view.findViewById(R.id.textViewCurrentModerator);
+        textViewCurrentModerator = view.findViewById(R.id.moderator_rating_textViewCurrentModerator);
         textViewCurrentModerator.setText(serviceViewModel.
                 getModeratorRatingService().
                 getCurrentModerator()

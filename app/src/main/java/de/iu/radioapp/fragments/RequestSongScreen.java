@@ -67,7 +67,7 @@ public class RequestSongScreen extends Fragment {
     }
 
     private void setupButtonConfirm() {
-        buttonConfirm = view.findViewById(R.id.btnConfirm);
+        buttonConfirm = view.findViewById(R.id.request_song_btnConfirm);
         buttonConfirm.setClickable(false);
         buttonConfirm.setOnClickListener(v -> {
             send();
@@ -75,14 +75,14 @@ public class RequestSongScreen extends Fragment {
     }
 
     private void setupButtonCancel() {
-        buttonCancel = view.findViewById(R.id.btnCancel);
+        buttonCancel = view.findViewById(R.id.request_song_btnCancel);
         buttonCancel.setOnClickListener(v -> {
             cancel();
         });
     }
 
     private void setupTextInputSongTitle() {
-        textInputSongTitle = view.findViewById(R.id.textInputSongTitle);
+        textInputSongTitle = view.findViewById(R.id.request_song_textInputSongTitle);
         textInputSongTitle.addTextChangedListener(new TextWatcher() {
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {}
@@ -92,7 +92,7 @@ public class RequestSongScreen extends Fragment {
     }
 
     private void setupTextInputSongAlbum() {
-        textInputSongAlbum = view.findViewById(R.id.textInputSongAlbum);
+        textInputSongAlbum = view.findViewById(R.id.request_song_textInputSongAlbum);
         textInputSongAlbum.addTextChangedListener(new TextWatcher() {
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {}
@@ -102,7 +102,7 @@ public class RequestSongScreen extends Fragment {
     }
 
     private void setupTextInputSongInterpreter() {
-        textInputSongInterpreter = view.findViewById(R.id.textInputSongInterpreter);
+        textInputSongInterpreter = view.findViewById(R.id.request_song_textInputSongInterpreter);
         textInputSongInterpreter.addTextChangedListener(new TextWatcher() {
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {}
@@ -112,7 +112,7 @@ public class RequestSongScreen extends Fragment {
     }
 
     private void setupEditTextAdditionalMessage() {
-        editTextAdditionalMessage = view.findViewById(R.id.editTextAdditionalMessage);
+        editTextAdditionalMessage = view.findViewById(R.id.request_song_editTextAdditionalMessage);
     }
 
     private void validate() {

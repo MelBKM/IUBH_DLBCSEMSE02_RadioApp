@@ -71,12 +71,12 @@ public class PlaylistScreen extends Fragment {
 
         Album albumModel = currentSong.getAlbum();
 
-        TextView playlistName = view.findViewById(R.id.textViewCurrentPlaylist);
-        TextView songTitle = view.findViewById(R.id.textViewCurrentSongTitle);
-        TextView interpreter = view.findViewById(R.id.textViewCurrentSongInterpreter);
-        TextView album = view.findViewById(R.id.textViewCurrentSongAlbum);
-        TextView releaseDate = view.findViewById(R.id.textViewCurrentSongReleaseDate);
-        ImageView imageViewCurrentSongAlbumCover = view.findViewById(R.id.imageViewCurrentSongAlbumCover);
+        TextView playlistName = view.findViewById(R.id.playlist_textViewCurrentPlaylist);
+        TextView songTitle = view.findViewById(R.id.playlist_textViewCurrentSongTitle);
+        TextView interpreter = view.findViewById(R.id.playlist_textViewCurrentSongInterpreter);
+        TextView album = view.findViewById(R.id.playlist_textViewCurrentSongAlbum);
+        TextView releaseDate = view.findViewById(R.id.playlist_textViewCurrentSongReleaseDate);
+        ImageView imageViewCurrentSongAlbumCover = view.findViewById(R.id.playlist_imageViewCurrentSongAlbumCover);
 
         playlistName.setText(
                 serviceViewModel
@@ -109,7 +109,7 @@ public class PlaylistScreen extends Fragment {
     private void loadPlaylistRating() {
 
         RatingBar ratingBarPlaylist =
-                view.findViewById(R.id.ratingBarPlaylist);
+                view.findViewById(R.id.playlist_ratingBarPlaylist);
 
         double averageRating =
                 serviceViewModel
@@ -121,7 +121,7 @@ public class PlaylistScreen extends Fragment {
 
     private void setupRatingFunction() {
         RatingBar ratingBarPlaylist =
-                view.findViewById(R.id.ratingBarPlaylist);
+                view.findViewById(R.id.playlist_ratingBarPlaylist);
 
         ratingBarPlaylist.setOnRatingBarChangeListener(
                 (ratingBar, rating, fromUser) -> {
